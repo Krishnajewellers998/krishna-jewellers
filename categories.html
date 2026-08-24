@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta
+name="description"
+content="Krishna Jewellers - All Jewellery Categories">
+
+<title>
+All Categories | Krishna Jewellers
+</title>
+
+
+<style>
+
+
+
+
+
+/* =====================================================
+   SEARCH BAR
+===================================================== */
+
+.search-section {
+
+    width: 100%;
+
+    padding: 12px 20px;
+
+    background: #fff;
+
+    position: sticky;
+
+    top: 78px;
+
+    z-index: 2500;
+
+    border-bottom: 1px solid #ead9a3;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,.06);
+
+    /* IMPORTANT */
+    align-self: flex-start;
+}
+
+
+.search-box {
+
+    width:100%;
+
+    max-width:700px;
+
+    margin:0 auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    background:#fff;
+
+    padding:7px;
+
+    border:1px solid #ead9a3;
+
+    border-radius:40px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,.08);
+
+}
+
+
+.search-box input {
+
+    flex:1;
+
+    min-width:0;
+
+    border:none;
+
+    outline:none;
+
+    padding:12px 17px;
+
+    font-size:14px;
+
+    color:#333;
+
+    background:transparent;
+
+}
+
+
+.search-box input::placeholder {
+
+    color:#999;
+
+}
+
+
+.search-box button {
+
+    border:none;
+
+    padding:11px 20px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #a67c00
+        );
+
+    color:#fff;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    white-space:nowrap;
+
+    transition:.2s;
+
+}
+
+
+.search-box button:hover {
+
+    transform:translateY(-1px);
+
+}
+
+
+/* =====================================================
+   MOBILE SEARCH
+===================================================== */
+
+@media(max-width:700px) {
+
+    .search-section {
+
+        padding:8px 10px;
+
+        top:64px;
+
+    }
+
+
+    .search-box {
+
+        padding:4px;
+
+        gap:4px;
+
+        border-radius:35px;
+
+    }
+
+
+    .search-box input {
+
+        padding:10px 12px;
+
+        font-size:13px;
+
+    }
+
+
+    .search-box button {
+
+        padding:9px 13px;
+
+        font-size:11px;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*,
+*::before,
+*::after {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #fff;
+
+    color: #222;
+
+    overflow-x: clip;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+}
+
+
+button {
+
+    font-family: inherit;
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --gold: #d4af37;
+
+    --gold-dark: #a67c00;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 3000;
+
+    width: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #080808,
+            #171717,
+            #080808
+        );
+
+    border-bottom:
+        1px solid rgba(212,175,55,.35);
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,.35);
+
+}
+
+
+.navbar {
+
+    width: 100%;
+
+    max-width: 1250px;
+
+    min-height: 78px;
+
+    margin: auto;
+
+    padding: 12px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--gold);
+
+    font-family: Georgia, serif;
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+}
+
+
+.logo img {
+
+    width: 48px;
+
+    height: 48px;
+
+    object-fit: contain;
+
+}
+
+
+.logo-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.logo-text small {
+
+    color: #aaa;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-top: 2px;
+
+}
+
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+nav a {
+
+    color: #fff;
+
+    font-size: 14px;
+
+    position: relative;
+
+}
+
+
+nav a:hover {
+
+    color: var(--gold);
+
+}
+
+
+.menu-btn {
+
+    display: none;
+
+    width: 42px;
+
+    height: 38px;
+
+    background: transparent;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    border-radius: 8px;
+
+    font-size: 20px;
+
+}
+
+
+/* =====================================================
+   PAGE HERO
+===================================================== */
+
+.page-hero {
+
+    width: 100%;
+
+    padding: 75px 20px 65px;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(212,175,55,.15),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #080808,
+            #1a170e,
+            #080808
+        );
+
+    color: #fff;
+
+}
+
+
+.page-label {
+
+    color: var(--gold);
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+
+}
+
+
+.page-hero h1 {
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(34px,6vw,55px);
+
+    color: var(--gold);
+
+    margin-bottom: 15px;
+
+}
+
+
+.page-hero p {
+
+    color: #bbb;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    max-width: 600px;
+
+    margin: auto;
+
+}
+
+
+/* =====================================================
+   CATEGORIES
+===================================================== */
+
+.categories-section {
+
+    width: 100%;
+
+    padding: 70px 20px 90px;
+
+    background: #fff;
+
+}
+
+
+.categories {
+
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap: 18px;
+
+}
+
+
+.category-card {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 12px;
+
+    text-align: center;
+
+    border-radius: 16px;
+
+    border: 1px solid #ead9a3;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf7,
+            #fff8e7
+        );
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 22px rgba(0,0,0,.05);
+
+    transition: .3s;
+
+}
+
+
+.category-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: var(--gold);
+
+    box-shadow:
+        0 14px 30px rgba(0,0,0,.11);
+
+}
+
+
+.category-image {
+
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 12px;
+
+    margin-bottom: 15px;
+
+    background: #f5f5f5;
+
+}
+
+
+.category-card h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    color: #8f6c08;
+
+    margin-bottom: 7px;
+
+    text-transform: capitalize;
+
+}
+
+
+.category-card p {
+
+    font-size: 11px;
+
+    color: #888;
+
+}
+
+
+.loading {
+
+    text-align: center;
+
+    color: #888;
+
+    width: 100%;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    width: 100%;
+
+    background: #000;
+
+    color: #777;
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    font-size: 13px;
+
+}
+
+
+.footer-brand {
+
+    color: var(--gold);
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    margin-bottom: 7px;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px) {
+
+
+    .navbar {
+
+        min-height: 64px;
+
+        padding: 8px 14px;
+
+    }
+
+
+    .logo {
+
+        font-size: 17px;
+
+        gap: 8px;
+
+        min-width: 0;
+
+    }
+
+
+    .logo img {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+
+    .logo-text {
+
+        min-width: 0;
+
+        overflow: hidden;
+
+    }
+
+
+    .logo-text span {
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+    }
+
+
+    .logo-text small {
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .menu-btn {
+
+        display: block;
+
+    }
+
+
+    nav {
+
+        display: none;
+
+        position: absolute;
+
+        left: 10px;
+
+        right: 10px;
+
+        top: 66px;
+
+        background: #111;
+
+        border:
+            1px solid
+            rgba(212,175,55,.25);
+
+        border-radius: 12px;
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+    }
+
+
+    nav.active {
+
+        display: flex;
+
+    }
+
+
+    nav a {
+
+        width: 100%;
+
+        text-align: center;
+
+        padding: 8px;
+
+    }
+
+
+    .page-hero {
+
+        padding: 55px 18px 50px;
+
+    }
+
+
+    .page-hero h1 {
+
+        font-size: 35px;
+
+    }
+
+
+    .page-hero p {
+
+        font-size: 14px;
+
+    }
+
+
+    .categories-section {
+
+        padding: 45px 14px 65px;
+
+    }
+
+
+    .categories {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        gap: 10px;
+
+    }
+
+
+    .category-card {
+
+        padding: 7px;
+
+        border-radius: 12px;
+
+    }
+
+
+    .category-image {
+
+        width: 100%;
+
+        height: 220px;
+
+        object-fit: cover;
+
+        display: block;
+
+        border-radius: 12px;
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .category-card h3 {
+
+        font-size: 15px;
+
+        line-height: 1.25;
+
+    }
+
+
+    .category-card p {
+
+        font-size: 10px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="navbar">
+
+<a
+href="index.html"
+class="logo">
+
+<img
+src="images/logo.png"
+alt="Krishna Jewellers Logo">
+
+<div class="logo-text">
+
+<span>
+Krishna Jewellers
+</span>
+
+<small>
+Fine Jewellery
+</small>
+
+</div>
+
+</a>
+
+
+<button
+class="menu-btn"
+onclick="toggleMenu()">
+
+☰
+
+</button>
+
+
+<nav id="mainNav">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="index.html#gold-rate">
+Gold Rate
+</a>
+
+<a href="index.html#collection">
+Collection
+</a>
+
+<a href="index.html#family">
+Our Family
+</a>
+
+<a href="index.html#location">
+Location
+</a>
+
+<a href="index.html#contact">
+Contact
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     SEARCH JEWELLERY
+===================================================== -->
+
+<section class="search-section">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="jewellerySearch"
+            placeholder="Search jewellery design..."
+            autocomplete="off"
+        >
+
+        <button
+            type="button"
+            onclick="searchJewellery()">
+            🔍 Search
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="page-hero">
+
+<div class="page-label">
+Explore
+</div>
+
+<h1>
+All Categories
+</h1>
+
+<p>
+Explore our complete jewellery collection
+category-wise and find the perfect design
+for every occasion.
+</p>
+
+</section>
+
+
+
+<!-- =====================================================
+     CATEGORIES
+===================================================== -->
+
+<section class="categories-section">
+
+<div
+class="categories"
+id="categoriesContainer">
+
+<div class="loading">
+Loading categories...
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="footer-brand">
+Krishna Jewellers
+</div>
+
+<div>
+Fine Gold Jewellery • Rath, Uttar Pradesh
+</div>
+
+<div style="margin-top:8px;">
+©️ 2026 Krishna Jewellers. All Rights Reserved.
+</div>
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   MENU
+===================================================== */
+
+function toggleMenu() {
+
+    document
+        .getElementById("mainNav")
+        .classList.toggle("active");
+
+}
+
+
+/* =====================================================
+   JEWELLERY SEARCH
+===================================================== */
+
+function searchJewellery() {
+
+    const input =
+        document.getElementById(
+            "jewellerySearch"
+        );
+
+    const search =
+        input.value.trim();
+
+
+    if (!search) {
+
+        input.focus();
+
+        return;
+
+    }
+
+
+    window.location.href =
+        "category.html?search=" +
+        encodeURIComponent(search);
+
+}
+
+
+/* ENTER KEY SEARCH */
+
+document
+    .getElementById("jewellerySearch")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                searchJewellery();
+
+            }
+
+        }
+    );
+
+/* =====================================================
+   LOAD CATEGORIES
+===================================================== */
+
+async function loadCategories() {
+
+    try {
+
+        const response =
+            await fetch("/api/categories");
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Categories API failed."
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        const categories =
+            data.categories || [];
+
+
+        const container =
+            document.getElementById(
+                "categoriesContainer"
+            );
+
+
+        container.innerHTML = "";
+
+
+        if (categories.length === 0) {
+
+            container.innerHTML = `
+
+                <div class="loading">
+
+                    Categories coming soon.
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        /* =================================================
+           CREATE CATEGORY CARDS
+           
+           IMPORTANT:
+           Ab hard-coded imageMap nahi hai.
+           
+           Category ki image directly
+           server.js se aayi image property
+           se load hogi.
+        ================================================= */
+
+        categories.forEach(category => {
+
+
+            /*
+               Old data.json compatibility:
+
+               Agar category sirf string hai
+               to name mil jayega.
+
+               Agar new object hai
+               to name + image dono milenge.
+            */
+
+            const categoryName =
+                typeof category === "string"
+                    ? category
+                    : category.name;
+
+
+            /*
+               Category image
+            */
+
+            const imagePath =
+                typeof category === "object" &&
+                category.image
+                    ? category.image
+                    : "images/banner.jpg";
+
+
+            /*
+               Card
+            */
+
+            const card =
+                document.createElement("div");
+
+
+            card.className =
+                "category-card";
+
+
+            /*
+               Image + name
+            */
+
+            card.innerHTML = `
+
+                <img
+                    src="${escapeHTML(imagePath)}"
+                    alt="${escapeHTML(categoryName)}"
+                    class="category-image"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='images/banner.jpg';"
+                >
+
+                <h3>
+                    ${escapeHTML(categoryName)}
+                </h3>
+
+                <p>
+                    View Designs →
+                </p>
+
+            `;
+
+
+            /*
+               Open category
+            */
+
+            card.onclick =
+                function() {
+
+                    window.location.href =
+                        "category.html?category=" +
+                        encodeURIComponent(
+                            categoryName
+                        );
+
+                };
+
+
+            container.appendChild(card);
+
+        });
+
+
+    } catch(error) {
+
+        console.error(
+            "Categories could not be loaded:",
+            error
+        );
+
+
+        document.getElementById(
+            "categoriesContainer"
+        ).innerHTML = `
+
+            <div class="loading">
+
+                Unable to load categories.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* =====================================================
+   SECURITY
+===================================================== */
+
+function escapeHTML(value) {
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadCategories();
+
+</script>
+
+</body>
+
+</html>

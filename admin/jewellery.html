@@ -1,0 +1,3687 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>Krishna Jewellers | Jewellery Management</title>
+
+
+<style>
+
+:root {
+    --gold: #d4af37;
+    --gold2: #a77b09;
+    --dark: #090909;
+    --cream: #fbf8f0;
+    --red: #b42318;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    margin: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8f3e6,
+            #fff
+        );
+
+    font-family: Arial, sans-serif;
+
+    color: #222;
+
+}
+
+
+button,
+input,
+select,
+textarea {
+
+    font-family: inherit;
+
+}
+
+
+button {
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.top {
+
+    background: #090909;
+
+    color: white;
+
+    padding: 22px 5%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid
+        rgba(212,175,55,.3);
+
+}
+
+
+.top h1 {
+
+    margin: 0;
+
+    color: var(--gold);
+
+    font:
+        700 28px
+        Georgia,
+        serif;
+
+}
+
+
+.top a {
+
+    color: white;
+
+    text-decoration: none;
+
+    border:
+        1px solid
+        #555;
+
+    padding:
+        9px 14px;
+
+    border-radius: 8px;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.wrap {
+
+    max-width: 1150px;
+
+    margin:
+        28px auto;
+
+    padding:
+        0 18px;
+
+}
+
+
+.card {
+
+    background: white;
+
+    border:
+        1px solid
+        #ead9a3;
+
+    border-radius: 18px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 10px 28px
+        rgba(0,0,0,.05);
+
+    margin-bottom: 22px;
+
+}
+
+
+h2 {
+
+    margin: 0;
+
+    color: var(--gold2);
+
+    font:
+        700 25px
+        Georgia,
+        serif;
+
+}
+
+
+.sub {
+
+    color: #777;
+
+    margin-top: 7px;
+
+}
+
+
+/* =====================================================
+   TOP ACTION BAR
+===================================================== */
+
+.management-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.add-btn {
+
+    border: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold2)
+        );
+
+    color: white;
+
+    padding:
+        12px 18px;
+
+    border-radius: 9px;
+
+    font-weight: 700;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 5px 12px
+        rgba(167,123,9,.2);
+
+}
+
+
+.add-btn:hover {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* =====================================================
+   SEARCH + FILTER
+===================================================== */
+
+.controls {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 220px;
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+}
+
+
+.controls input,
+.controls select {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border:
+        2px solid
+        #ead9a3;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    background: white;
+
+}
+
+
+.controls input:focus,
+.controls select:focus {
+
+    border-color:
+        var(--gold);
+
+}
+
+
+.search-info {
+
+    margin-top: 12px;
+
+    color: #777;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   JEWELLERY GRID
+===================================================== */
+
+.grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 22px;
+
+}
+
+
+/* =====================================================
+   JEWELLERY CARD
+===================================================== */
+
+.item {
+
+    background: white;
+
+    border:
+        1px solid
+        #e6d8af;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 6px 18px
+        rgba(0,0,0,.05);
+
+}
+
+
+/* =====================================================
+   PHOTOS
+===================================================== */
+
+.main-photo {
+
+    width: 100%;
+
+    height: 230px;
+
+    object-fit: cover;
+
+    display: block;
+
+    background:
+        #f7f2e3;
+
+}
+
+
+.no-photo {
+
+    width: 100%;
+
+    height: 230px;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+        #f7f2e3;
+
+    color: #999;
+
+}
+
+
+.thumbnails {
+
+    display: flex;
+
+    gap: 6px;
+
+    padding:
+        8px 10px 0;
+
+    overflow-x: auto;
+
+}
+
+
+.thumbnails img {
+
+    width: 55px;
+
+    height: 55px;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+
+    border:
+        1px solid
+        #ddd;
+
+    flex-shrink: 0;
+
+}
+
+
+/* =====================================================
+   ITEM BODY
+===================================================== */
+
+.item-body {
+
+    padding: 15px;
+
+}
+
+
+.item-body h3 {
+
+    margin:
+        0 0 9px;
+
+    color:
+        var(--gold2);
+
+    font-size: 20px;
+
+}
+
+
+.category-badge {
+
+    display: inline-block;
+
+    background:
+        #f4e7bd;
+
+    color:
+        #866309;
+
+    padding:
+        5px 9px;
+
+    border-radius:
+        99px;
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+}
+
+
+.weight {
+
+    margin-top: 10px;
+
+    font-size: 14px;
+
+    color: #555;
+
+    font-weight: 700;
+
+}
+
+
+.description {
+
+    margin-top: 10px;
+
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =====================================================
+   SYNONYMS
+===================================================== */
+
+.synonyms {
+
+    margin-top: 12px;
+
+    padding: 10px;
+
+    border-radius: 9px;
+
+    background:
+        #fffaf0;
+
+    border:
+        1px solid
+        #ead9a3;
+
+}
+
+
+.synonyms-title {
+
+    color:
+        var(--gold2);
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    margin-bottom:
+        5px;
+
+}
+
+
+.synonyms-text {
+
+    color:
+        #777;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.5;
+
+}
+
+
+/* =====================================================
+   ACTIONS
+===================================================== */
+
+.actions {
+
+    display: flex;
+
+    gap: 7px;
+
+    margin-top: 15px;
+
+}
+
+
+.btn {
+
+    border: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold2)
+        );
+
+    color: white;
+
+    padding:
+        10px 15px;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+}
+
+
+.secondary {
+
+    background: #444;
+
+}
+
+
+.danger {
+
+    background:
+        var(--red);
+
+}
+
+
+.btn:hover {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.empty {
+
+    grid-column:
+        1 / -1;
+
+    text-align:
+        center;
+
+    padding:
+        35px;
+
+    color:
+        #888;
+
+    background:
+        #fafafa;
+
+    border-radius:
+        12px;
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,.55);
+
+    z-index: 1000;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+}
+
+
+.modal-box {
+
+    max-width: 600px;
+
+    margin:
+        40px auto;
+
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 24px;
+
+}
+
+
+.modal-box h2 {
+
+    margin-bottom: 20px;
+
+}
+
+
+.modal-field {
+
+    margin-bottom: 14px;
+
+}
+
+
+.modal-field label {
+
+    display: block;
+
+    font-weight: 700;
+
+    margin-bottom: 6px;
+
+}
+
+
+.modal-field input,
+.modal-field select,
+.modal-field textarea {
+
+    width: 100%;
+
+    padding: 11px;
+
+    border:
+        1px solid
+        #ccc;
+
+    border-radius: 8px;
+
+}
+
+
+.modal-field textarea {
+
+    min-height: 90px;
+
+    resize: vertical;
+
+}
+
+
+/* =====================================================
+   FILE UPLOAD
+===================================================== */
+
+.file-box {
+
+    border:
+        2px dashed
+        #d4af37;
+
+    background:
+        #fffaf0;
+
+    padding: 18px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+}
+
+
+.file-box input {
+
+    width: 100%;
+
+}
+
+
+.file-help {
+
+    margin-top: 7px;
+
+    color: #777;
+
+    font-size: 12px;
+
+}
+
+
+.selected-images {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin-top: 12px;
+
+}
+
+
+.selected-image {
+
+    position: relative;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        #ddd;
+
+}
+
+
+.selected-image img {
+
+    width: 100%;
+
+    height: 90px;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.selected-image span {
+
+    position: absolute;
+
+    left: 5px;
+
+    bottom: 5px;
+
+    background:
+        rgba(0,0,0,.65);
+
+    color: white;
+
+    padding:
+        3px 6px;
+
+    border-radius: 4px;
+
+    font-size: 10px;
+
+}
+
+
+/* =====================================================
+   MODAL ACTIONS
+===================================================== */
+
+.modal-actions {
+
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 18px;
+
+}
+
+
+.modal-actions button {
+
+    flex: 1;
+
+}
+
+
+/* =====================================================
+   ADD STATUS
+===================================================== */
+
+.add-status {
+
+    display: none;
+
+    margin-top: 12px;
+
+    padding: 11px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+}
+
+
+.add-success {
+
+    display: block;
+
+    background:
+        #e9f7ec;
+
+    color:
+        #28733a;
+
+}
+
+
+.add-error {
+
+    display: block;
+
+    background:
+        #ffeded;
+
+    color:
+        #a32920;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width: 850px) {
+
+    .grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media(max-width: 600px) {
+
+
+    .top {
+
+        flex-direction:
+            column;
+
+        gap: 12px;
+
+        text-align:
+            center;
+
+    }
+
+
+    .top h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .wrap {
+
+        padding:
+            0 12px;
+
+    }
+
+
+    .card {
+
+        padding:
+            18px;
+
+    }
+
+
+    .controls {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .main-photo,
+    .no-photo {
+
+        height: 260px;
+
+    }
+
+
+    .selected-images {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .modal-box {
+
+        margin:
+            15px auto;
+
+        padding:
+            18px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="top">
+
+    <h1>
+        Jewellery Management
+    </h1>
+
+
+    <a href="/admin/logout" style="margin-left:8px;">Logout</a>
+
+
+    <a href="index.html">
+
+        ← Back to Admin
+
+    </a>
+
+</header>
+
+
+
+<main class="wrap">
+
+
+<section class="card">
+
+
+    <!-- =================================================
+         TITLE + ADD BUTTON
+    ================================================= -->
+
+    <div class="management-top">
+
+        <div>
+
+            <h2>
+                All Jewellery Designs
+            </h2>
+
+            <p class="sub">
+
+                Search, filter, edit or delete
+                your jewellery designs.
+
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="add-btn"
+            onclick="openAddModal()">
+
+            ＋ Add New Jewellery
+
+        </button>
+
+    </div>
+
+
+
+    <!-- =================================================
+         SEARCH + CATEGORY
+    ================================================= -->
+
+    <div class="controls">
+
+
+        <input
+            type="search"
+            id="smartSearch"
+            placeholder="🔍 Search jewellery... e.g. ring, अंगूठी, angoothi">
+
+
+        <select
+            id="categoryFilter">
+
+            <option value="">
+                All Categories
+            </option>
+
+        </select>
+
+
+    </div>
+
+
+
+    <div
+        class="search-info"
+        id="searchInfo">
+
+        Loading jewellery...
+
+    </div>
+
+
+
+    <!-- =================================================
+         JEWELLERY LIST
+    ================================================= -->
+
+    <!-- =================================================
+     JEWELLERY LIST
+===================================================== -->
+
+<div
+    id="jewelleryList"
+    class="grid">
+
+</div>
+
+
+<!-- =================================================
+     LOAD MORE
+===================================================== -->
+
+<div
+    id="loadMoreBox"
+    style="
+        text-align: center;
+        margin-top: 25px;
+    ">
+
+    <button
+        type="button"
+        id="loadMoreBtn"
+        class="add-btn"
+        onclick="loadMoreJewellery()">
+
+        Load More Jewellery
+
+    </button>
+
+</div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     ADD JEWELLERY MODAL
+===================================================== -->
+
+<div
+    id="addModal"
+    class="modal">
+
+
+    <div class="modal-box">
+
+
+        <h2>
+            Add New Jewellery
+        </h2>
+
+
+        <div class="modal-field">
+
+            <label>
+                Jewellery Name *
+            </label>
+
+            <input
+                id="addName"
+                type="text"
+                placeholder="e.g. Gold Ring">
+
+        </div>
+
+
+
+        <div class="modal-field">
+
+            <label>
+                Category *
+            </label>
+
+            <select
+                id="addCategory">
+
+                <option value="">
+                    Select Category
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <div class="modal-field">
+
+            <label>
+                Weight (Gram)
+            </label>
+
+            <input
+                type="number"
+                id="addWeight"
+                step="0.001"
+                min="0"
+                placeholder="e.g. 5.250">
+
+        </div>
+
+
+
+        <div class="modal-field">
+
+            <label>
+                Description
+            </label>
+
+            <textarea
+                id="addDescription"
+                placeholder="Enter jewellery description..."></textarea>
+
+        </div>
+
+
+
+        <div class="modal-field">
+
+            <label>
+                Search Synonyms
+            </label>
+
+            <input
+                id="addSynonyms"
+                placeholder="ring, अंगूठी, angoothi">
+
+        </div>
+
+
+
+        <div class="modal-field">
+
+            <label>
+                Jewellery Photos
+            </label>
+
+
+            <div class="file-box">
+
+                <input
+                    type="file"
+                    id="addImages"
+                    accept="image/jpeg,image/png,image/webp"
+                    multiple>
+
+
+                <div class="file-help">
+
+                    You can select multiple JPG, PNG or WEBP
+                    photos. Maximum 8MB per photo.
+
+                </div>
+
+
+                <div
+                    id="selectedImages"
+                    class="selected-images">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            id="addStatus"
+            class="add-status">
+
+        </div>
+
+
+
+        <div class="modal-actions">
+
+
+            <button
+                type="button"
+                class="btn secondary"
+                onclick="closeAddModal()">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                type="button"
+                class="btn"
+                id="addJewelleryBtn"
+                onclick="addJewellery()">
+
+                Add Jewellery
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     EDIT MODAL
+===================================================== -->
+
+<div
+    id="editModal"
+    class="modal">
+
+
+    <div class="modal-box">
+
+
+        <h2>
+            Edit Jewellery
+        </h2>
+
+
+
+        <div class="modal-field">
+
+            <label>
+                Jewellery Name
+            </label>
+
+            <input
+                id="editName">
+
+        </div>
+
+
+
+        <div class="modal-field">
+
+            <label>
+                Category
+            </label>
+
+            <select
+                id="editCategory">
+
+            </select>
+
+        </div>
+
+
+
+        <div class="modal-field">
+
+            <label>
+                Weight (Gram)
+            </label>
+
+            <input
+                type="number"
+                id="editWeight"
+                step="0.001"
+                min="0">
+
+        </div>
+
+
+
+        <div class="modal-field">
+
+            <label>
+                Description
+            </label>
+
+            <textarea
+                id="editDescription">
+
+            </textarea>
+
+        </div>
+
+
+
+        <div class="modal-field">
+
+            <label>
+                Search Synonyms
+            </label>
+
+            <input
+                id="editSynonyms"
+                placeholder="ring, अंगूठी, angoothi">
+
+        </div>
+
+
+
+        <div class="modal-actions">
+
+
+            <button
+                type="button"
+                class="btn secondary"
+                onclick="closeEditModal()">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                type="button"
+                class="btn"
+                id="saveEditBtn"
+                onclick="saveEdit()">
+
+                Save Changes
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =====================================================
+   HELPER
+===================================================== */
+
+const $ =
+    id =>
+        document.getElementById(id);
+
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function esc(value) {
+
+    return String(
+        value ?? ""
+    ).replace(
+        /[&<>"']/g,
+        function(match) {
+
+            return {
+
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#039;"
+
+            }[match];
+
+        }
+    );
+
+}
+
+
+
+/* =====================================================
+   SMART SEARCH
+===================================================== */
+
+const synonymGroups = [
+
+    [
+        "ring",
+        "rings",
+        "gold ring",
+        "finger ring",
+        "अंगूठी",
+        "अंगूठीया",
+        "angoothi",
+        "anguthi"
+    ],
+
+    [
+        "earring",
+        "earrings",
+        "ear ring",
+        "ear rings",
+        "कान की बाली",
+        "बाली",
+        "बाले",
+        "bali",
+        "bala"
+    ],
+
+    [
+        "necklace",
+        "necklaces",
+        "हार",
+        "haar",
+        "mala",
+        "माला"
+    ],
+
+    [
+        "chain",
+        "chains",
+        "gold chain",
+        "चेन",
+        "चैन",
+        "chaini"
+    ],
+
+    [
+        "bracelet",
+        "bracelets",
+        "कंगन",
+        "कड़ा",
+        "kangan",
+        "kada"
+    ],
+
+    [
+        "bangle",
+        "bangles",
+        "चूड़ी",
+        "चूड़ियां",
+        "chudi",
+        "chudiya"
+    ],
+
+    [
+        "pendant",
+        "pendants",
+        "लॉकेट",
+        "locket",
+        "loket"
+    ],
+
+    [
+        "mangalsutra",
+        "mangal sutra",
+        "मंगलसूत्र"
+    ],
+
+    [
+        "nose ring",
+        "nose pin",
+        "नथ",
+        "नथनी",
+        "nosepin",
+        "nath",
+        "nathni"
+    ],
+
+    [
+        "jhumka",
+        "jhumki",
+        "झुमका",
+        "झुमकी",
+        "jhumke"
+    ],
+
+    [
+        "payal",
+        "anklet",
+        "anklets",
+        "पायल",
+        "पाजेब"
+    ]
+
+];
+
+
+
+/* =====================================================
+   NORMALIZE
+===================================================== */
+
+function normalizeSearch(value) {
+
+    return String(
+        value || ""
+    )
+    .toLowerCase()
+    .trim()
+    .replace(
+        /[.,!?'"`~@#$%^&*()_+=<>[\]{}|\\/:-]/g,
+        " "
+    )
+    .replace(
+        /\s+/g,
+        " "
+    );
+
+}
+
+
+
+/* =====================================================
+   SEARCH TERMS
+===================================================== */
+
+function getSearchTerms(query) {
+
+    const normalized =
+        normalizeSearch(query);
+
+
+    if (!normalized) {
+
+        return [];
+
+    }
+
+
+    const terms =
+        new Set();
+
+
+    terms.add(
+        normalized
+    );
+
+
+    normalized
+        .split(" ")
+        .forEach(
+            word => {
+
+                if (
+                    word.length >= 2
+                ) {
+
+                    terms.add(
+                        word
+                    );
+
+                }
+
+            }
+        );
+
+
+    synonymGroups.forEach(
+        group => {
+
+            const found =
+                group.some(
+                    synonym => {
+
+                        const s =
+                            normalizeSearch(
+                                synonym
+                            );
+
+
+                        return (
+
+                            normalized === s ||
+
+                            normalized.includes(s) ||
+
+                            s.includes(normalized)
+
+                        );
+
+                    }
+                );
+
+
+            if (found) {
+
+                group.forEach(
+                    synonym => {
+
+                        terms.add(
+                            normalizeSearch(
+                                synonym
+                            )
+                        );
+
+                    }
+                );
+
+            }
+
+        }
+    );
+
+
+    return Array.from(
+        terms
+    );
+
+}
+
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+function searchJewellery(
+    jewellery,
+    query
+) {
+
+
+    const normalizedQuery =
+        normalizeSearch(query);
+
+
+    if (!normalizedQuery) {
+
+        return jewellery;
+
+    }
+
+
+    const terms =
+        getSearchTerms(
+            normalizedQuery
+        );
+
+
+    return jewellery.filter(
+        item => {
+
+
+            const searchableText =
+                normalizeSearch(
+
+                    [
+
+                        item.name,
+
+                        item.category,
+
+                        item.description,
+
+                        Array.isArray(
+                            item.synonyms
+                        )
+
+                            ?
+
+                            item.synonyms.join(" ")
+
+                            :
+
+                            item.synonyms || ""
+
+                    ].join(" ")
+
+                );
+
+
+            return terms.some(
+                term =>
+                    searchableText.includes(
+                        term
+                    )
+            );
+
+        }
+    );
+
+}
+
+
+
+/* =====================================================
+   DATA
+===================================================== */
+
+let allJewellery = [];
+
+let allCategories = [];
+
+let editingId = null;
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+let currentPage = 1;
+
+const JEWELLERY_PER_PAGE = 20;
+
+let hasMoreJewellery = false;
+
+let loadingMoreJewellery = false;
+
+
+
+/* =====================================================
+   LOAD CATEGORIES
+===================================================== */
+
+async function loadCategories() {
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/categories"
+            );
+
+
+        const data =
+            await response.json();
+
+
+        allCategories =
+            Array.isArray(
+                data.categories
+            )
+                ? data.categories
+                : [];
+
+
+        renderCategoryFilters();
+
+
+    } catch (error) {
+
+        console.error(
+            "Category load error:",
+            error
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   CATEGORY FILTERS
+===================================================== */
+
+function renderCategoryFilters() {
+
+
+    const filter =
+        $("categoryFilter");
+
+
+    const edit =
+        $("editCategory");
+
+
+    const add =
+        $("addCategory");
+
+
+    filter.innerHTML =
+        `
+            <option value="">
+                All Categories
+            </option>
+        `;
+
+
+    edit.innerHTML =
+        `
+            <option value="">
+                Select Category
+            </option>
+        `;
+
+
+    add.innerHTML =
+        `
+            <option value="">
+                Select Category
+            </option>
+        `;
+
+
+    allCategories.forEach(
+        category => {
+
+
+            const name =
+                typeof category === "string"
+
+                    ? category
+
+                    : category?.name;
+
+
+            if (!name) {
+
+                return;
+
+            }
+
+
+            filter.innerHTML += `
+
+                <option
+                    value="${esc(name)}">
+
+                    ${esc(name)}
+
+                </option>
+
+            `;
+
+
+            edit.innerHTML += `
+
+                <option
+                    value="${esc(name)}">
+
+                    ${esc(name)}
+
+                </option>
+
+            `;
+
+
+            add.innerHTML += `
+
+                <option
+                    value="${esc(name)}">
+
+                    ${esc(name)}
+
+                </option>
+
+            `;
+
+        }
+    );
+
+}
+
+
+
+/* =====================================================
+   LOAD JEWELLERY
+===================================================== */
+
+/* =====================================================
+   LOAD JEWELLERY
+   FIRST 30 PRODUCTS
+===================================================== */
+
+async function loadJewellery(reset = true) {
+
+    if (loadingMoreJewellery) {
+        return;
+    }
+
+    if (reset) {
+
+        currentPage = 1;
+
+        allJewellery = [];
+
+    }
+
+    loadingMoreJewellery = true;
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/jewellery?page=" +
+                currentPage +
+                "&limit=" +
+                JEWELLERY_PER_PAGE +
+                "&_=" +
+                Date.now()
+            );
+
+        const data =
+            await response.json();
+
+        if (
+            !response.ok ||
+            !data.success
+        ) {
+
+            throw new Error(
+                data.message ||
+                "Could not load jewellery."
+            );
+
+        }
+
+        const newJewellery =
+            Array.isArray(data.jewellery)
+                ? data.jewellery
+                : [];
+
+
+        if (currentPage === 1) {
+
+            allJewellery =
+                newJewellery;
+
+        } else {
+
+            allJewellery =
+                allJewellery.concat(
+                    newJewellery
+                );
+
+        }
+
+
+        hasMoreJewellery =
+            Boolean(
+                data.pagination?.hasMore
+            );
+
+
+        renderJewellery();
+
+
+        if (hasMoreJewellery) {
+
+            currentPage++;
+
+        }
+
+
+        updateLoadMoreButton();
+
+
+    } catch (error) {
+
+        console.error(
+            "Jewellery load error:",
+            error
+        );
+
+        if (currentPage === 1) {
+
+            $("jewelleryList").innerHTML = `
+
+                <div class="empty">
+
+                    Could not load jewellery.
+
+                </div>
+
+            `;
+
+        }
+
+    } finally {
+
+        loadingMoreJewellery = false;
+
+    }
+
+}
+
+
+/* =====================================================
+   LOAD MORE
+===================================================== */
+
+async function loadMoreJewellery() {
+
+    if (
+        !hasMoreJewellery ||
+        loadingMoreJewellery
+    ) {
+
+        return;
+
+    }
+
+
+    const button =
+        $("loadMoreBtn");
+
+
+    button.disabled =
+        true;
+
+
+    button.textContent =
+        "Loading...";
+
+
+    await loadJewellery(false);
+
+
+    button.disabled =
+        false;
+
+
+    button.textContent =
+        "Load More Jewellery";
+
+}
+
+
+
+
+
+
+/* =====================================================
+   LOAD MORE
+===================================================== */
+
+async function loadMoreJewellery() {
+
+    if (
+        !hasMoreJewellery ||
+        loadingMoreJewellery
+    ) {
+
+        return;
+
+    }
+
+    const button =
+        $("loadMoreBtn");
+
+    button.disabled =
+        true;
+
+    button.textContent =
+        "Loading...";
+
+    await loadJewellery(false);
+
+    button.disabled =
+        false;
+
+    button.textContent =
+        "Load More Jewellery";
+
+}
+
+
+/* =====================================================
+   STEP 3
+   LOAD ALL JEWELLERY FOR SEARCH
+===================================================== */
+
+async function loadAllJewelleryForSearch() {
+
+    if (loadingMoreJewellery) {
+        return;
+    }
+
+
+    loadingMoreJewellery = true;
+
+
+    try {
+
+        let page = 1;
+
+        let allResults = [];
+
+
+        while (true) {
+
+            const response =
+                await fetch(
+                    "/api/jewellery?page=" +
+                    page +
+                    "&limit=" +
+                    JEWELLERY_PER_PAGE +
+                    "&_=" +
+                    Date.now()
+                );
+
+
+            const data =
+                await response.json();
+
+
+            if (
+                !response.ok ||
+                !data.success
+            ) {
+
+                throw new Error(
+                    data.message ||
+                    "Could not load jewellery."
+                );
+
+            }
+
+
+            const products =
+                Array.isArray(
+                    data.jewellery
+                )
+                    ? data.jewellery
+                    : [];
+
+
+            allResults =
+                allResults.concat(
+                    products
+                );
+
+
+            const hasMore =
+                Boolean(
+                    data.pagination?.hasMore
+                );
+
+
+            if (!hasMore) {
+
+                break;
+
+            }
+
+
+            page++;
+
+        }
+
+
+        allJewellery =
+            allResults;
+
+
+        currentPage =
+            page;
+
+
+        hasMoreJewellery =
+            false;
+
+
+        renderJewellery();
+
+
+        updateLoadMoreButton();
+
+
+    } catch (error) {
+
+        console.error(
+            "Search load error:",
+            error
+        );
+
+
+        $("searchInfo").textContent =
+            "Could not search jewellery.";
+
+
+    } finally {
+
+        loadingMoreJewellery =
+            false;
+
+    }
+
+}
+
+
+/* =====================================================
+   LOAD MORE BUTTON
+===================================================== */
+
+function updateLoadMoreButton() {
+
+    const box =
+        $("loadMoreBox");
+
+
+    const button =
+        $("loadMoreBtn");
+
+
+    if (
+        !hasMoreJewellery
+    ) {
+
+        box.style.display =
+            "none";
+
+        return;
+
+    }
+
+
+    box.style.display =
+        "block";
+
+
+    button.disabled =
+        false;
+
+
+    button.textContent =
+        "Load More Jewellery";
+
+}
+
+/* =====================================================
+   RENDER
+===================================================== */
+
+function renderJewellery() {
+
+
+    const search =
+        $("smartSearch")
+            .value
+            .trim();
+
+
+    const category =
+        $("categoryFilter")
+            .value;
+
+
+    let filtered =
+        searchJewellery(
+            allJewellery,
+            search
+        );
+
+
+    if (category) {
+
+        filtered =
+            filtered.filter(
+                item =>
+                    String(
+                        item.category || ""
+                    ) === category
+            );
+
+    }
+
+
+
+    $("searchInfo").textContent =
+
+        "Showing " +
+        filtered.length +
+        " of " +
+        allJewellery.length +
+        " jewellery design(s).";
+
+
+
+    if (
+        filtered.length === 0
+    ) {
+
+        $("jewelleryList").innerHTML = `
+
+            <div class="empty">
+
+                ${
+                    search || category
+
+                        ?
+
+                        "No jewellery found."
+
+                        :
+
+                        "No jewellery added yet."
+
+                }
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+
+    $("jewelleryList").innerHTML =
+        filtered.map(
+            item =>
+                createJewelleryCard(
+                    item
+                )
+        ).join("");
+
+}
+
+
+updateLoadMoreButton();
+
+
+/* =====================================================
+   CREATE CARD
+===================================================== */
+
+function createJewelleryCard(
+    item
+) {
+
+
+    let images = [];
+
+
+    if (
+        Array.isArray(
+            item.images
+        )
+    ) {
+
+        images =
+            item.images;
+
+    } else if (
+        item.image
+    ) {
+
+        images = [
+            item.image
+        ];
+
+    }
+
+
+
+    let mainImage =
+        images.length > 0
+            ? "/" + images[0]
+            : "";
+
+
+
+    const photos =
+        images
+            .slice(1)
+            .map(
+                image => `
+
+                    <img
+                        src="/${esc(image)}"
+                        alt="${esc(item.name)}">
+
+                `
+            )
+            .join("");
+
+
+
+    return `
+
+        <article
+            class="item">
+
+
+            ${
+                mainImage
+
+                    ?
+
+                    `
+
+                    <img
+                        class="main-photo"
+                        src="${esc(mainImage)}"
+                        alt="${esc(item.name)}">
+
+                    `
+
+                    :
+
+                    `
+
+                    <div
+                        class="no-photo">
+
+                        No Photo
+
+                    </div>
+
+                    `
+
+            }
+
+
+
+            ${
+                images.length > 1
+
+                    ?
+
+                    `
+
+                    <div
+                        class="thumbnails">
+
+                        ${photos}
+
+                    </div>
+
+                    `
+
+                    : ""
+
+            }
+
+
+
+            <div
+                class="item-body">
+
+
+                <h3>
+
+                    ${esc(item.name)}
+
+                </h3>
+
+
+
+                ${
+                    item.category
+
+                        ?
+
+                        `
+
+                        <span
+                            class="category-badge">
+
+                            ${esc(item.category)}
+
+                        </span>
+
+                        `
+
+                        : ""
+
+                }
+
+
+
+                ${
+                    item.weight
+
+                        ?
+
+                        `
+
+                        <div
+                            class="weight">
+
+                            ⚖
+                            ${esc(item.weight)}
+                            Gram
+
+                        </div>
+
+                        `
+
+                        : ""
+
+                }
+
+
+
+                ${
+                    item.description
+
+                        ?
+
+                        `
+
+                        <div
+                            class="description">
+
+                            ${esc(
+                                item.description
+                            )}
+
+                        </div>
+
+                        `
+
+                        : ""
+
+                }
+
+
+
+                ${
+                    Array.isArray(
+                        item.synonyms
+                    ) &&
+                    item.synonyms.length > 0
+
+                        ?
+
+                        `
+
+                        <div
+                            class="synonyms">
+
+
+                            <div
+                                class="synonyms-title">
+
+                                🔎 Search Synonyms
+
+                            </div>
+
+
+                            <div
+                                class="synonyms-text">
+
+                                ${esc(
+                                    item.synonyms.join(
+                                        ", "
+                                    )
+                                )}
+
+                            </div>
+
+
+                        </div>
+
+                        `
+
+                        : ""
+
+                }
+
+
+
+                <div
+                    class="actions">
+
+
+                    <button
+                        type="button"
+                        class="btn secondary"
+                        onclick="
+                            openEditModal(
+                                ${Number(item.id)}
+                            )
+                        ">
+
+                        ✏️ Edit
+
+                    </button>
+
+
+
+                    <button
+                        type="button"
+                        class="btn danger"
+                        onclick="
+                            deleteJewellery(
+                                ${Number(item.id)}
+                            )
+                        ">
+
+                        🗑 Delete
+
+                    </button>
+
+
+                </div>
+
+
+            </div>
+
+
+        </article>
+
+    `;
+
+}
+
+
+
+/* =====================================================
+   SEARCH EVENTS
+===================================================== */
+
+let searchTimer = null;
+
+$("smartSearch").addEventListener(
+    "input",
+    function() {
+
+        clearTimeout(searchTimer);
+
+        const query =
+            this.value.trim();
+
+
+        /*
+           Empty search:
+           normal pagination mode
+        */
+
+        if (!query) {
+
+            renderJewellery();
+
+            return;
+
+        }
+
+
+        /*
+           Search mode:
+           automatically load ALL jewellery
+        */
+
+        searchTimer =
+            setTimeout(
+                async function() {
+
+                    await loadAllJewelleryForSearch();
+
+                },
+                250
+            );
+
+    }
+);
+
+
+$("categoryFilter").addEventListener(
+    "change",
+    renderJewellery
+);
+
+
+
+/* =====================================================
+   ADD MODAL
+===================================================== */
+
+function openAddModal() {
+
+    $("addModal").style.display =
+        "block";
+
+
+    $("addName").focus();
+
+
+    $("addStatus").className =
+        "add-status";
+
+
+    $("addStatus").textContent =
+        "";
+
+
+    /*
+       Categories latest state mein
+       already loaded honge.
+    */
+
+}
+
+
+
+function closeAddModal() {
+
+    $("addModal").style.display =
+        "none";
+
+
+    $("addName").value =
+        "";
+
+
+    $("addCategory").value =
+        "";
+
+
+    $("addWeight").value =
+        "";
+
+
+    $("addDescription").value =
+        "";
+
+
+    $("addSynonyms").value =
+        "";
+
+
+    $("addImages").value =
+        "";
+
+
+    $("selectedImages").innerHTML =
+        "";
+
+
+    $("addStatus").className =
+        "add-status";
+
+
+    $("addStatus").textContent =
+        "";
+
+}
+
+
+
+/* =====================================================
+   IMAGE PREVIEW
+===================================================== */
+
+$("addImages").addEventListener(
+    "change",
+    function() {
+
+        const box =
+            $("selectedImages");
+
+
+        box.innerHTML =
+            "";
+
+
+        const files =
+            Array.from(
+                this.files || []
+            );
+
+
+        files.forEach(
+            (file, index) => {
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload =
+                    function(event) {
+
+                        box.innerHTML += `
+
+                            <div
+                                class="selected-image">
+
+                                <img
+                                    src="${event.target.result}"
+                                    alt="Selected image">
+
+                                <span>
+                                    Photo ${index + 1}
+                                </span>
+
+                            </div>
+
+                        `;
+
+                    };
+
+
+                reader.readAsDataURL(
+                    file
+                );
+
+            }
+        );
+
+    }
+);
+
+
+
+/* =====================================================
+   ADD STATUS
+===================================================== */
+
+function addStatus(
+    message,
+    type
+) {
+
+    const box =
+        $("addStatus");
+
+
+    box.textContent =
+        message;
+
+
+    box.className =
+        "add-status " +
+        (
+            type === "success"
+                ? "add-success"
+                : "add-error"
+        );
+
+}
+
+
+
+/* =====================================================
+   UPLOAD ONE IMAGE
+===================================================== */
+
+async function uploadJewelleryImage(
+    file
+) {
+
+
+    const formData =
+        new FormData();
+
+
+    formData.append(
+        "image",
+        file
+    );
+
+
+    const response =
+        await fetch(
+            "/api/upload-image",
+            {
+
+                method:
+                    "POST",
+
+                body:
+                    formData
+
+            }
+        );
+
+
+    const data =
+        await response.json();
+
+
+    if (
+        !response.ok ||
+        !data.success
+    ) {
+
+        throw new Error(
+            data.message ||
+            "Could not upload image."
+        );
+
+    }
+
+
+    return data.image;
+
+}
+
+
+
+/* =====================================================
+   ADD JEWELLERY
+===================================================== */
+
+async function addJewellery() {
+
+
+    const name =
+        $("addName")
+            .value
+            .trim();
+
+
+    const category =
+        $("addCategory")
+            .value;
+
+
+    const weight =
+        $("addWeight")
+            .value
+            .trim();
+
+
+    const description =
+        $("addDescription")
+            .value
+            .trim();
+
+
+    const synonymsText =
+        $("addSynonyms")
+            .value
+            .trim();
+
+
+    const files =
+        Array.from(
+            $("addImages").files || []
+        );
+
+
+
+    /* =================================================
+       VALIDATION
+    ================================================= */
+
+    if (!name) {
+
+        addStatus(
+            "Please enter jewellery name.",
+            "error"
+        );
+
+        $("addName").focus();
+
+        return;
+
+    }
+
+
+    if (!category) {
+
+        addStatus(
+            "Please select a category.",
+            "error"
+        );
+
+        $("addCategory").focus();
+
+        return;
+
+    }
+
+
+    /* =================================================
+       SYNONYMS
+    ================================================= */
+
+    const synonyms =
+        synonymsText
+
+            ?
+
+            synonymsText
+                .split(",")
+                .map(
+                    value =>
+                        value.trim()
+                )
+                .filter(
+                    value =>
+                        value.length > 0
+                )
+
+            :
+
+            [];
+
+
+
+    const button =
+        $("addJewelleryBtn");
+
+
+    button.disabled =
+        true;
+
+
+    button.textContent =
+        "Adding...";
+
+
+    try {
+
+
+        /* =================================================
+           UPLOAD PHOTOS
+        ================================================= */
+
+        const images = [];
+
+
+        for (
+            let i = 0;
+            i < files.length;
+            i++
+        ) {
+
+
+            addStatus(
+                "Uploading photo " +
+                (i + 1) +
+                " of " +
+                files.length +
+                "...",
+                "success"
+            );
+
+
+            const image =
+                await uploadJewelleryImage(
+                    files[i]
+                );
+
+
+            images.push(
+                image
+            );
+
+        }
+
+
+
+        /* =================================================
+           SAVE JEWELLERY
+        ================================================= */
+
+        addStatus(
+            "Saving jewellery...",
+            "success"
+        );
+
+
+        const response =
+            await fetch(
+                "/api/jewellery",
+                {
+
+                    method:
+                        "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            name:
+                                name,
+
+                            category:
+                                category,
+
+                            weight:
+                                weight,
+
+                            description:
+                                description,
+
+                            images:
+                                images,
+
+                            synonyms:
+                                synonyms
+
+                        })
+
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            !response.ok ||
+            !data.success
+        ) {
+
+            throw new Error(
+                data.message ||
+                "Could not add jewellery."
+            );
+
+        }
+
+
+
+        /* =================================================
+           SUCCESS
+        ================================================= */
+
+        addStatus(
+            "Jewellery added successfully.",
+            "success"
+        );
+
+
+        await loadJewellery();
+
+
+        setTimeout(
+            function() {
+
+                closeAddModal();
+
+            },
+            500
+        );
+
+
+    } catch (error) {
+
+
+        console.error(
+            "Add jewellery error:",
+            error
+        );
+
+
+        addStatus(
+            error.message ||
+            "Could not add jewellery.",
+            "error"
+        );
+
+
+    } finally {
+
+
+        button.disabled =
+            false;
+
+
+        button.textContent =
+            "Add Jewellery";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   OPEN EDIT
+===================================================== */
+
+function openEditModal(id) {
+
+
+    const item =
+        allJewellery.find(
+            jewellery =>
+                Number(jewellery.id) ===
+                Number(id)
+        );
+
+
+    if (!item) {
+
+        alert(
+            "Jewellery not found."
+        );
+
+        return;
+
+    }
+
+
+    editingId =
+        id;
+
+
+    $("editName").value =
+        item.name || "";
+
+
+    $("editCategory").value =
+        item.category || "";
+
+
+    $("editWeight").value =
+        item.weight || "";
+
+
+    $("editDescription").value =
+        item.description || "";
+
+
+    $("editSynonyms").value =
+
+        Array.isArray(
+            item.synonyms
+        )
+
+            ?
+
+            item.synonyms.join(
+                ", "
+            )
+
+            :
+
+            "";
+
+
+
+    $("editModal").style.display =
+        "block";
+
+}
+
+
+
+/* =====================================================
+   CLOSE EDIT
+===================================================== */
+
+function closeEditModal() {
+
+    $("editModal").style.display =
+        "none";
+
+    editingId =
+        null;
+
+}
+
+
+
+/* =====================================================
+   SAVE EDIT
+===================================================== */
+
+async function saveEdit() {
+
+
+    if (!editingId) {
+
+        return;
+
+    }
+
+
+    const name =
+        $("editName")
+            .value
+            .trim();
+
+
+    const category =
+        $("editCategory")
+            .value;
+
+
+    if (!name) {
+
+        alert(
+            "Please enter jewellery name."
+        );
+
+        return;
+
+    }
+
+
+    if (!category) {
+
+        alert(
+            "Please select category."
+        );
+
+        return;
+
+    }
+
+
+    const synonymsText =
+        $("editSynonyms")
+            .value
+            .trim();
+
+
+    const synonyms =
+        synonymsText
+
+            ?
+
+            synonymsText
+                .split(",")
+                .map(
+                    value =>
+                        value.trim()
+                )
+                .filter(
+                    value =>
+                        value.length > 0
+                )
+
+            :
+
+            [];
+
+
+    const button =
+        $("saveEditBtn");
+
+
+    button.disabled =
+        true;
+
+
+    button.textContent =
+        "Saving...";
+
+
+    try {
+
+
+        const response =
+            await fetch(
+                "/api/jewellery/" +
+                editingId,
+                {
+
+                    method: "PUT",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            name:
+                                name,
+
+                            category:
+                                category,
+
+                            weight:
+                                $("editWeight")
+                                    .value
+                                    .trim(),
+
+                            description:
+                                $("editDescription")
+                                    .value
+                                    .trim(),
+
+                            synonyms:
+                                synonyms
+
+                        })
+
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            !response.ok ||
+            !data.success
+        ) {
+
+            throw new Error(
+                data.message ||
+                "Could not update jewellery."
+            );
+
+        }
+
+
+        closeEditModal();
+
+
+        await loadJewellery();
+
+
+    } catch (error) {
+
+
+        console.error(
+            "Edit error:",
+            error
+        );
+
+
+        alert(
+            error.message ||
+            "Could not edit jewellery."
+        );
+
+
+    } finally {
+
+
+        button.disabled =
+            false;
+
+
+        button.textContent =
+            "Save Changes";
+
+    }
+
+}
+
+
+
+/* =====================================================
+   DELETE
+===================================================== */
+
+async function deleteJewellery(
+    id
+) {
+
+
+    const item =
+        allJewellery.find(
+            jewellery =>
+                Number(jewellery.id) ===
+                Number(id)
+        );
+
+
+    const name =
+        item?.name ||
+        "this jewellery design";
+
+
+
+    if (
+        !confirm(
+            `Delete "${name}"?`
+        )
+    ) {
+
+        return;
+
+    }
+
+
+
+    try {
+
+
+        const response =
+            await fetch(
+                "/api/jewellery/" +
+                id,
+                {
+
+                    method:
+                        "DELETE"
+
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+
+        if (
+            !response.ok ||
+            !data.success
+        ) {
+
+            throw new Error(
+                data.message ||
+                "Could not delete jewellery."
+            );
+
+        }
+
+
+
+        await loadJewellery();
+
+
+
+    } catch (error) {
+
+
+        console.error(
+            "Delete error:",
+            error
+        );
+
+
+        alert(
+            error.message ||
+            "Could not delete jewellery."
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   CLOSE MODALS ON OUTSIDE CLICK
+===================================================== */
+
+$("editModal").addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target ===
+            this
+        ) {
+
+            closeEditModal();
+
+        }
+
+    }
+);
+
+
+$("addModal").addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target ===
+            this
+        ) {
+
+            closeAddModal();
+
+        }
+
+    }
+);
+
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadCategories();
+
+loadJewellery();
+
+</script>
+
+
+</body>
+
+</html>

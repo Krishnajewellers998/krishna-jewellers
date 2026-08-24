@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krishna Jewellers | Admin Login</title>
+<style>
+:root{--gold:#d4af37;--gold2:#a77b09;--dark:#090909}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#f8f3e6,#fff);font-family:Arial,sans-serif;color:#222}
+.login{width:min(420px,100%);background:#fff;border:1px solid #ead9a3;border-radius:20px;padding:30px;box-shadow:0 18px 45px rgba(0,0,0,.09)}
+.logo{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;margin:0 auto 16px;background:#090909;color:var(--gold);font:700 27px Georgia,serif;border:1px solid rgba(212,175,55,.5)}
+h1{text-align:center;margin:0;color:var(--gold2);font:700 27px Georgia,serif}.sub{text-align:center;color:#777;margin:8px 0 24px}
+.field{margin-bottom:15px}.field label{display:block;font-weight:700;margin-bottom:7px}.field input{width:100%;padding:13px;border:1px solid #ccc;border-radius:9px;font-size:15px;outline:none}.field input:focus{border-color:var(--gold)}
+button{width:100%;border:0;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;padding:13px;border-radius:9px;font-weight:700;font-size:15px;cursor:pointer}button:disabled{opacity:.7;cursor:wait}
+.status{display:none;margin-top:14px;padding:11px;border-radius:9px;font-size:14px}.error{display:block;background:#ffeded;color:#a32920}.success{display:block;background:#e9f7ec;color:#28733a}
+.note{text-align:center;color:#999;font-size:12px;margin-top:18px}
+</style>
+</head>
+<body>
+<div class="login">
+    <div class="logo">KJ</div>
+    <h1>Krishna Jewellers</h1>
+    <p class="sub">Admin Panel Login</p>
+    <form id="loginForm">
+        <div class="field"><label for="username">Admin ID</label><input id="username" autocomplete="username" required autofocus></div>
+        <div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required></div>
+        <button id="loginBtn" type="submit">Login to Admin Panel</button>
+    </form>
+    <div id="status" class="status"></div>
+    <div class="note">Authorized access only</div>
+</div>
+<script>
+const form=document.getElementById('loginForm');
+const btn=document.getElementById('loginBtn');
+const box=document.getElementById('status');
+function show(message,type){box.textContent=message;box.className='status '+type;}
+form.addEventListener('submit',async e=>{
+    e.preventDefault(); btn.disabled=true; btn.textContent='Signing in...'; box.className='status'; box.textContent='';
+    try{
+        const response=await fetch('/api/admin/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:document.getElementById('username').value,password:document.getElementById('password').value})});
+        const data=await response.json();
+        if(!response.ok||!data.success) throw new Error(data.message||'Login failed.');
+        show('Login successful. Opening Admin Panel...','success');
+        setTimeout(()=>location.href='/admin/index.html',250);
+    }catch(error){show(error.message||'Could not login.','error');}
+    finally{btn.disabled=false;btn.textContent='Login to Admin Panel';}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+{
+    "goldRates": {
+        "24K": 158000,
+        "22K": 145305,
+        "18K": 118886
+    },
+    "updatedAt": "2026-08-24T10:09:30.355Z",
+    "categories": [
+        {
+            "name": "Ring",
+            "image": "images/1787566237194-category-ring.jpg",
+            "synonyms": []
+        },
+        {
+            "name": "necklace",
+            "image": "images/1787264125559-category-necklace.jpg",
+            "synonyms": []
+        },
+        {
+            "name": "chains",
+            "image": "images/1787264157152-category-chains.jpg",
+            "synonyms": []
+        },
+        {
+            "name": "kangan",
+            "image": "images/1787264168970-category-kangan.jpg",
+            "synonyms": []
+        },
+        {
+            "name": "jhumki",
+            "image": "images/1787264183438-category-jhumki.jpg",
+            "synonyms": []
+        },
+        {
+            "name": "patta jhumki",
+            "image": "images/1787264193529-WhatsApp-Image-2026-08-20-at-11-00-22-PM.jpeg",
+            "synonyms": []
+        },
+        "tops",
+        "suidhaga",
+        "kundal",
+        "brajbala",
+        "bala",
+        "mangtika",
+        "besar",
+        "nose pin",
+        {
+            "name": "pendant",
+            "synonyms": []
+        },
+        {
+            "name": "payal",
+            "image": "images/1787263491209-1786983932181-WhatsApp-Image-2026-08-17-at-9-54-16-PM.jpeg",
+            "synonyms": []
+        },
+        {
+            "name": "kamarbelt",
+            "image": "images/1787401813533-gold-ring.jpg",
+            "synonyms": []
+        },
+        {
+            "name": "goldKamarpeti",
+            "image": "images/1787421414935-rahul.jpg",
+            "synonyms": []
+        },
+        {
+            "name": "suyash",
+            "image": "images/1787566224028-1787424134430-krishna.jpg",
+            "synonyms": []
+        }
+    ],
+    "jewellery": [
+        {
+            "id": 1786908197709,
+            "name": "haar",
+            "category": "goldKamarpeti",
+            "description": "elegent",
+            "image": "images/1786908197605-WhatsApp Image 2026-08-17 at 12.52.06 AM.jpeg",
+            "weight": "14",
+            "synonyms": [
+                "kamarpeti"
+            ]
+        },
+        {
+            "id": 1786908296808,
+            "name": "gents ring",
+            "category": "Ring",
+            "description": "",
+            "image": "images/1786908296780-WhatsApp Image 2026-08-16 at 11.27.48 PM.jpeg",
+            "weight": ""
+        },
+        {
+            "id": 1786909684058,
+            "name": "gents chain",
+            "category": "chains",
+            "weight": "10.200",
+            "description": "",
+            "image": "images/1786909683998-WhatsApp Image 2026-08-17 at 1.17.35 AM.jpeg"
+        },
+        {
+            "id": 1786983932299,
+            "name": "kada",
+            "category": "kangan",
+            "weight": "12.200",
+            "description": "",
+            "image": "images/1786983932181-WhatsApp-Image-2026-08-17-at-9-54-16-PM.jpeg"
+        },
+        {
+            "id": 1786999991463,
+            "name": "ring 1",
+            "category": "Ring",
+            "weight": "2.2",
+            "description": "",
+            "image": "images/1786999991339-WhatsApp-Image-2026-08-18-at-2-17-55-AM.jpeg"
+        },
+        {
+            "id": 1787000020592,
+            "name": "ring2",
+            "category": "Ring",
+            "weight": "2.3",
+            "description": "",
+            "image": "images/1787000020571-WhatsApp-Image-2026-08-18-at-2-18-16-AM.jpeg"
+        },
+        {
+            "id": 1787000041523,
+            "name": "ring3",
+            "category": "Ring",
+            "weight": "2.4",
+            "description": "",
+            "image": "images/1787000041431-WhatsApp-Image-2026-08-18-at-2-18-17-AM.jpeg"
+        },
+        {
+            "id": 1787136203768,
+            "name": "ring 5",
+            "category": "Ring",
+            "weight": "4",
+            "description": "",
+            "image": "images/1787136203535-WhatsApp-Image-2026-08-18-at-2-17-55-AM.jpeg"
+        },
+        {
+            "id": 1787136223690,
+            "name": "ring 6",
+            "category": "Ring",
+            "weight": "3",
+            "description": "",
+            "image": "images/1787136223659-WhatsApp-Image-2026-08-18-at-2-18-16-AM.jpeg"
+        },
+        {
+            "id": 1787136247688,
+            "name": "ring 7",
+            "category": "Ring",
+            "weight": "5",
+            "description": "",
+            "image": "images/1787136247619-WhatsApp-Image-2026-08-18-at-2-18-17-AM--1-.jpeg"
+        },
+        {
+            "id": 1787136266763,
+            "name": "ring 8",
+            "category": "Ring",
+            "weight": "7",
+            "description": "",
+            "image": "images/1787136266732-WhatsApp-Image-2026-08-18-at-2-18-18-AM--3-.jpeg"
+        },
+        {
+            "id": 1787136287934,
+            "name": "ring 9",
+            "category": "Ring",
+            "weight": "9",
+            "description": "",
+            "image": "images/1787136287853-WhatsApp-Image-2026-08-18-at-2-18-18-AM.jpeg"
+        },
+        {
+            "id": 1787144489196,
+            "name": "gents ring",
+            "category": "Ring",
+            "weight": "3",
+            "description": "",
+            "images": [
+                "images/1787144488814-WhatsApp-Image-2026-08-18-at-2-18-17-AM.jpeg"
+            ]
+        },
+        {
+            "id": 1787145618952,
+            "name": "krishna",
+            "category": "Ring",
+            "weight": "3",
+            "description": "",
+            "images": [
+                "images/1787145618445-WhatsApp-Image-2026-08-18-at-2-17-55-AM.jpeg",
+                "images/1787145618687-WhatsApp-Image-2026-08-18-at-2-18-16-AM.jpeg",
+                "images/1787145618738-WhatsApp-Image-2026-08-18-at-2-18-17-AM--1-.jpeg",
+                "images/1787145618787-WhatsApp-Image-2026-08-18-at-2-18-17-AM.jpeg",
+                "images/1787145618853-WhatsApp-Image-2026-08-18-at-2-18-18-AM--2-.jpeg"
+            ]
+        },
+        {
+            "id": 1787146080242,
+            "name": "gents chain",
+            "category": "chains",
+            "weight": "12",
+            "description": "",
+            "images": [
+                "images/1787146079778-WhatsApp-Image-2026-08-18-at-2-18-17-AM--1-.jpeg",
+                "images/1787146080072-WhatsApp-Image-2026-08-18-at-2-18-17-AM.jpeg",
+                "images/1787146080208-WhatsApp-Image-2026-08-17-at-3-21-58-AM.jpeg"
+            ]
+        },
+        {
+            "id": 1787164366901,
+            "name": "nath",
+            "category": "besar",
+            "weight": "2",
+            "description": "",
+            "images": [
+                "images/1787164366558-WhatsApp-Image-2026-08-17-at-3-21-58-AM--1-.jpeg"
+            ],
+            "synonyms": [
+                "besar",
+                "nath",
+                "nose ring"
+            ]
+        },
+        {
+            "id": 1787424134766,
+            "name": "brajbala",
+            "category": "brajbala",
+            "weight": "5",
+            "description": "",
+            "images": [
+                "images/1787424134430-krishna.jpg",
+                "images/1787424134615-logo.png",
+                "images/1787424134691-tauji.jpg"
+            ],
+            "synonyms": [
+                "jhale"
+            ]
+        },
+        {
+            "id": 1787428006994,
+            "name": "bcd",
+            "category": "kangan",
+            "weight": "",
+            "description": "",
+            "images": [],
+            "synonyms": []
+        },
+        {
+            "id": 1787428020643,
+            "name": "xyx",
+            "category": "jhumki",
+            "weight": "",
+            "description": "",
+            "images": [],
+            "synonyms": []
+        },
+        {
+            "id": 1787428040856,
+            "name": "kjh",
+            "category": "suidhaga",
+            "weight": "",
+            "description": "",
+            "images": [],
+            "synonyms": []
+        },
+        {
+            "id": 1787428051023,
+            "name": "wer",
+            "category": "kundal",
+            "weight": "",
+            "description": "",
+            "images": [],
+            "synonyms": []
+        },
+        {
+            "id": 1787428061622,
+            "name": "mnn",
+            "category": "nose pin",
+            "weight": "",
+            "description": "",
+            "images": [],
+            "synonyms": []
+        },
+        {
+            "id": 1787428083235,
+            "name": "lkh",
+            "category": "mangtika",
+            "weight": "",
+            "description": "",
+            "images": [],
+            "synonyms": []
+        },
+        {
+            "id": 1787566453871,
+            "name": "heera",
+            "category": "suyash",
+            "weight": "4.987",
+            "description": "",
+            "images": [
+                "images/1787566453758-rahul.jpg"
+            ],
+            "synonyms": [
+                "suyashji"
+            ]
+        }
+    ]
+}

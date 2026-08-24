@@ -1,0 +1,3605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="description"
+    content="Krishna Jewellers Jewellery Collection">
+
+<title>
+    Jewellery Collection | Krishna Jewellers
+</title>
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*,
+*::before,
+*::after {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+    overflow-x: hidden;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #fff;
+
+    color: #222;
+
+    overflow-x: hidden;
+
+}
+
+
+img {
+
+    max-width: 100%;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+}
+
+
+button {
+
+    font-family: inherit;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --gold: #d4af37;
+
+    --gold-dark: #a67c00;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 3000;
+
+    width: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #080808,
+            #171717,
+            #080808
+        );
+
+    border-bottom:
+        1px solid
+        rgba(212,175,55,.35);
+
+    box-shadow:
+        0 5px 25px
+        rgba(0,0,0,.35);
+
+}
+
+
+.navbar {
+
+    width: 100%;
+
+    max-width: 1250px;
+
+    min-height: 78px;
+
+    margin: auto;
+
+    padding: 12px 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: var(--gold);
+
+    font-family: Georgia, serif;
+
+    font-size: 21px;
+
+    font-weight: bold;
+
+}
+
+
+.logo img {
+
+    width: 48px;
+
+    height: 48px;
+
+    object-fit: contain;
+
+}
+
+
+.logo-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.logo-text small {
+
+    color: #aaa;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-top: 2px;
+
+}
+
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+}
+
+
+nav a {
+
+    color: #fff;
+
+    font-size: 14px;
+
+}
+
+
+nav a:hover {
+
+    color: var(--gold);
+
+}
+
+
+.menu-btn {
+
+    display: none;
+
+    width: 42px;
+
+    height: 38px;
+
+    background: transparent;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    border-radius: 8px;
+
+    font-size: 20px;
+
+}
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.page-header {
+
+    width: 100%;
+
+    padding: 55px 20px 45px;
+
+    text-align: center;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(212,175,55,.14),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #080808,
+            #19160e,
+            #080808
+        );
+
+    color: #fff;
+
+}
+
+
+.page-label {
+
+    color: var(--gold);
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+
+}
+
+
+.page-header h1 {
+
+    font-family: Georgia, serif;
+
+    font-size:
+        clamp(32px,6vw,52px);
+
+    color: var(--gold);
+
+    margin-bottom: 12px;
+
+}
+
+
+.page-header p {
+
+    color: #bbb;
+
+    font-size: 14px;
+
+}
+
+
+/* =====================================================
+   PRODUCT SECTION
+===================================================== */
+
+/* =====================================================
+   CATEGORY SEARCH BAR
+===================================================== */
+
+
+
+
+.category-search {
+
+    position: sticky;
+
+    top: 78px;
+
+    z-index: 2500;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    max-width: 420px;
+
+    margin: 0 auto;
+
+    padding: 10px 0;
+
+    background: #fff;
+
+}
+
+
+.category-search input {
+
+    flex: 1;
+
+    height: 42px;
+
+    padding: 0 14px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-size: 13px;
+
+    background: #fff;
+
+}
+
+
+.category-search input:focus {
+
+    border-color: var(--gold);
+
+    box-shadow:
+        0 0 0 2px
+        rgba(212,175,55,.12);
+
+}
+
+
+.category-search button {
+
+    height: 42px;
+
+    padding: 0 17px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #111;
+
+    color: #fff;
+
+    font-size: 13px;
+
+}
+
+
+.category-search button:hover {
+
+    background: var(--gold);
+
+    color: #111;
+
+}
+
+
+/* MOBILE SEARCH */
+
+@media(max-width:700px) {
+
+
+
+    .top-bar {
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .category-search {
+
+        order: 3;
+
+        width: 100%;
+
+        max-width: 100%;
+
+    }
+
+
+    .category-search input {
+
+        height: 40px;
+
+    }
+
+
+    .category-search button {
+
+        height: 40px;
+
+        padding: 0 14px;
+
+    }
+
+}
+
+
+.products-section {
+
+    width: 100%;
+
+    max-width: 1250px;
+
+    margin: auto;
+
+    padding: 45px 20px 90px;
+
+}
+
+
+.top-bar {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+
+    background: #fff;
+
+    padding: 12px 0;
+
+}
+
+
+.back-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 11px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #111;
+
+    color: #fff;
+
+    font-size: 13px;
+
+}
+
+
+.back-button:hover {
+
+    background: var(--gold);
+
+    color: #111;
+
+}
+
+
+.product-count {
+
+    color: #888;
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================================
+   PRODUCTS GRID
+===================================================== */
+
+.products {
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap: 22px;
+
+}
+
+
+.product {
+
+    width: 100%;
+
+    background: #fff;
+
+    border: 1px solid #eee;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.07);
+
+    transition: .3s;
+
+}
+
+
+.product:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(0,0,0,.11);
+
+}
+
+
+.product-image {
+
+    width: 100%;
+
+    height: 250px;
+
+    display: block;
+
+    object-fit: contain;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #fffaf0
+        );
+
+    cursor: pointer;
+
+}
+
+
+.product-info {
+
+    padding: 18px;
+
+}
+
+
+.product h3 {
+
+    color: #9b7200;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.weight {
+
+    display: inline-block;
+
+    background: #fff4cf;
+
+    color: #8b6800;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+}
+
+
+.product p {
+
+    color: #666;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-top: 10px;
+
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+
+
+.empty {
+
+    width: 100%;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    color: #777;
+
+}
+
+
+.empty h3 {
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    color: #9b7200;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    z-index: 6000;
+
+    background:
+        rgba(0,0,0,.88);
+
+    padding: 20px;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+.modal-content {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 600px;
+
+    max-height: 92vh;
+
+    overflow-y: auto;
+
+    background: #fff;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+}
+
+
+.modal-image {
+
+    width: 100%;
+
+    height: 450px;
+
+    object-fit: contain;
+
+    background: #fafafa;
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   MODAL CLOSE BUTTON
+===================================================== */
+
+.close-modal {
+
+    position: absolute;
+
+    top: 12px;
+
+    right: 12px;
+
+    z-index: 30;
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,0,0,.75);
+
+    color: #fff;
+
+    font-size: 25px;
+
+}
+
+
+/* =====================================================
+   PHOTO NAVIGATION
+===================================================== */
+
+.photo-nav {
+
+    position: absolute;
+
+    top: 220px;
+
+    z-index: 25;
+
+    width: 44px;
+
+    height: 44px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,0,0,.72);
+
+    color: #fff;
+
+    font-size: 32px;
+
+    line-height: 1;
+
+    display: none;
+
+}
+
+
+.photo-nav:hover {
+
+    background: var(--gold);
+
+    color: #111;
+
+}
+
+
+.photo-prev {
+
+    left: 12px;
+
+}
+
+
+.photo-next {
+
+    right: 12px;
+
+}
+
+
+/* =====================================================
+   PHOTO COUNTER
+===================================================== */
+
+.photo-counter {
+
+    display: none;
+
+    padding: 7px;
+
+    color: #777;
+
+    font-size: 12px;
+
+    background: #fff;
+
+}
+
+
+/* =====================================================
+   THUMBNAILS
+===================================================== */
+
+.modal-gallery {
+
+    display: flex;
+
+    gap: 8px;
+
+    padding: 10px;
+
+    overflow-x: auto;
+
+    background: #fff;
+
+    scrollbar-width: thin;
+
+}
+
+
+.modal-thumb {
+
+    width: 65px;
+
+    height: 65px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+
+    border: 2px solid #ddd;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+}
+
+
+.modal-thumb.active {
+
+    border-color: var(--gold);
+
+}
+
+
+.modal-info {
+
+    padding: 25px;
+
+}
+
+
+.modal-info h2 {
+
+    color: #9b7200;
+
+    font-family: Georgia, serif;
+
+    margin-bottom: 12px;
+
+}
+
+
+.modal-info p {
+
+    color: #666;
+
+    line-height: 1.6;
+
+}
+
+
+.whatsapp-btn {
+
+    display: inline-flex;
+
+    margin-top: 17px;
+
+    padding: 12px 22px;
+
+    background: #25D366;
+
+    color: #fff;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    width: 100%;
+
+    background: #000;
+
+    color: #777;
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    font-size: 13px;
+
+}
+
+
+.footer-brand {
+
+    color: var(--gold);
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    margin-bottom: 7px;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px) {
+
+
+    .navbar {
+
+        min-height: 64px;
+
+        padding: 8px 14px;
+
+    }
+
+
+    .logo {
+
+        font-size: 17px;
+
+        gap: 8px;
+
+        min-width: 0;
+
+    }
+
+
+    .logo img {
+
+        width: 38px;
+
+        height: 38px;
+
+    }
+
+
+    .logo-text {
+
+        min-width: 0;
+
+        overflow: hidden;
+
+    }
+
+
+    .logo-text span {
+
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+    }
+
+
+    .logo-text small {
+
+        font-size: 7px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    .menu-btn {
+
+        display: block;
+
+    }
+
+
+    nav {
+
+        display: none;
+
+        position: absolute;
+
+        left: 10px;
+
+        right: 10px;
+
+        top: 66px;
+
+        background: #111;
+
+        border:
+            1px solid
+            rgba(212,175,55,.25);
+
+        border-radius: 12px;
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+    }
+
+
+    nav.active {
+
+        display: flex;
+
+    }
+
+
+    nav a {
+
+        width: 100%;
+
+        text-align: center;
+
+        padding: 8px;
+
+    }
+
+
+    .page-header {
+
+        padding: 45px 15px 35px;
+
+    }
+
+
+    .page-header h1 {
+
+        font-size: 34px;
+
+        line-height: 1.2;
+
+    }
+
+
+    .products-section {
+
+        padding: 25px 12px 60px;
+
+    }
+
+
+  .top-bar {
+
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    padding: 10px 0; 
+
+    background: #fff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+}
+
+
+    .back-button {
+
+        padding: 10px 14px;
+
+        font-size: 12px;
+
+    }
+
+
+    .product-count {
+
+        font-size: 11px;
+
+    }
+
+
+    .products {
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        gap: 10px;
+
+    }
+
+
+    .product {
+
+        border-radius: 11px;
+
+    }
+
+
+    .product-image {
+
+        height: 175px;
+
+    }
+
+
+    .product-info {
+
+        padding: 12px 10px;
+
+    }
+
+
+    .product h3 {
+
+        font-size: 15px;
+
+        line-height: 1.25;
+
+        margin-bottom: 8px;
+
+    }
+
+
+    .weight {
+
+        font-size: 10px;
+
+        padding: 5px 8px;
+
+    }
+
+
+    .product p {
+
+        font-size: 11px;
+
+        margin-top: 7px;
+
+        line-height: 1.45;
+
+    }
+
+
+    .modal {
+
+        padding: 10px;
+
+    }
+
+
+    .modal-content {
+
+        border-radius: 14px;
+
+    }
+
+
+    .modal-image {
+
+        height: 300px;
+
+    }
+
+
+    .photo-nav {
+
+        top: 145px;
+
+        width: 38px;
+
+        height: 38px;
+
+        font-size: 28px;
+
+    }
+
+
+    .photo-prev {
+
+        left: 8px;
+
+    }
+
+
+    .photo-next {
+
+        right: 8px;
+
+    }
+
+
+    .modal-info {
+
+        padding: 20px 15px;
+
+    }
+
+
+    .modal-thumb {
+
+        width: 58px;
+
+        height: 58px;
+
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL PHONES
+===================================================== */
+
+@media(max-width:390px) {
+
+
+    .products {
+
+        gap: 8px;
+
+    }
+
+
+    .product-image {
+
+        height: 160px;
+
+    }
+
+
+    .product-info {
+
+        padding: 10px 8px;
+
+    }
+
+
+    .product h3 {
+
+        font-size: 14px;
+
+    }
+
+
+    .weight {
+
+        font-size: 9px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="navbar">
+
+
+<a
+    href="index.html"
+    class="logo">
+
+    <img
+        src="images/logo.png"
+        alt="Krishna Jewellers Logo">
+
+
+    <div class="logo-text">
+
+        <span>
+            Krishna Jewellers
+        </span>
+
+        <small>
+            Fine Jewellery
+        </small>
+
+    </div>
+
+</a>
+
+
+<button
+    class="menu-btn"
+    onclick="toggleMenu()">
+
+    ☰
+
+</button>
+
+
+<nav id="mainNav">
+
+    <a href="index.html">
+        Home
+    </a>
+
+    <a href="index.html#gold-rate">
+        Gold Rate
+    </a>
+
+    <a href="index.html#collection">
+        Collection
+    </a>
+
+    <a href="index.html#family">
+        Our Family
+    </a>
+
+    <a href="index.html#location">
+        Location
+    </a>
+
+    <a href="index.html#contact">
+        Contact
+    </a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     PAGE HEADER
+===================================================== -->
+
+<section class="page-header">
+
+<div class="page-label">
+    Our Collection
+</div>
+
+<h1 id="categoryTitle">
+    Jewellery Collection
+</h1>
+
+<p>
+    Explore our beautiful designs
+</p>
+
+</section>
+
+
+
+<!-- =====================================================
+     PRODUCTS
+===================================================== -->
+
+<section class="products-section">
+
+
+<div class="top-bar">
+
+    <button
+        class="back-button"
+        onclick="goBack()">
+
+        ← Back to Categories
+
+    </button>
+
+
+    <div
+        class="product-count"
+        id="productCount">
+
+        Loading...
+
+    </div>
+
+</div>
+
+
+
+
+    <form
+        class="category-search"
+        id="categorySearchForm">
+
+        <input
+            type="search"
+            id="categorySearchInput"
+            placeholder="Search jewellery..."
+            autocomplete="off">
+
+        <button
+            type="submit">
+
+            🔍 Search
+
+        </button>
+
+    </form>
+
+
+
+
+<div
+    class="products"
+    id="productsContainer">
+
+</div>
+
+<button
+    id="loadMoreBtn"
+    type="button"
+    style="
+        display:none;
+        margin:30px auto 0;
+        padding:12px 25px;
+        border:none;
+        border-radius:8px;
+        background:#111;
+        color:#fff;
+        font-size:13px;
+    "
+>
+    Load More
+</button>
+
+</section>
+
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="imageModal">
+
+
+    <div class="modal-content">
+
+
+        <button
+            class="close-modal"
+            onclick="closeModal()">
+
+            ×
+
+        </button>
+
+
+        <button
+            class="photo-nav photo-prev"
+            id="photoPrev"
+            onclick="previousPhoto()">
+
+            ‹
+
+        </button>
+
+
+        <img
+            id="modalImage"
+            class="modal-image"
+            src=""
+            alt="Jewellery">
+
+
+        <button
+            class="photo-nav photo-next"
+            id="photoNext"
+            onclick="nextPhoto()">
+
+            ›
+
+        </button>
+
+
+        <div
+            class="photo-counter"
+            id="photoCounter">
+
+        </div>
+
+
+        <div
+            class="modal-gallery"
+            id="modalGallery">
+
+        </div>
+
+
+        <div class="modal-info">
+
+
+            <h2 id="modalName">
+                Jewellery
+            </h2>
+
+
+            <p id="modalDescription">
+            </p>
+
+
+            <p id="modalWeight">
+            </p>
+
+
+            <a
+                id="modalWhatsapp"
+                href="#"
+                target="_blank"
+                class="whatsapp-btn">
+
+                🟢 Enquire on WhatsApp
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="footer-brand">
+    Krishna Jewellers
+</div>
+
+<div>
+    Fine Gold Jewellery • Rath, Uttar Pradesh
+</div>
+
+<div style="margin-top:8px;">
+    ©️ 2026 Krishna Jewellers. All Rights Reserved.
+</div>
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+function toggleMenu() {
+
+    document
+        .getElementById("mainNav")
+        .classList
+        .toggle("active");
+
+}
+
+
+/* =====================================================
+   GET CATEGORY / SEARCH FROM URL
+===================================================== */
+
+const urlParams =
+    new URLSearchParams(
+        window.location.search
+    );
+
+
+const selectedCategory =
+    urlParams.get("category");
+
+
+const searchQuery =
+    urlParams.get("search");
+
+    /* =====================================================
+   CATEGORY PAGE SEARCH
+===================================================== */
+
+const categorySearchForm =
+    document.getElementById(
+        "categorySearchForm"
+    );
+
+
+const categorySearchInput =
+    document.getElementById(
+        "categorySearchInput"
+    );
+
+
+/* Show current search */
+
+if (
+    searchQuery &&
+    categorySearchInput
+) {
+
+    categorySearchInput.value =
+        searchQuery;
+
+}
+
+
+/* Search submit */
+
+if (categorySearchForm) {
+
+    categorySearchForm.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            const search =
+                categorySearchInput.value
+                    .trim();
+
+
+            if (!search) {
+
+                return;
+
+            }
+
+
+            window.location.href =
+                "category.html?search=" +
+                encodeURIComponent(
+                    search
+                );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   CURRENT PHOTO STATE
+===================================================== */
+
+let currentItem = null;
+
+let currentImages = [];
+
+let currentPhotoIndex = 0;
+
+/* =====================================================
+   LOAD MORE
+===================================================== */
+
+const PRODUCTS_PER_LOAD = 20;
+
+let visibleProductCount = PRODUCTS_PER_LOAD;
+
+let allMainProducts = [];
+
+let allSimilarProducts = [];
+
+
+
+
+
+
+/* =====================================================
+   IMAGE PATH
+===================================================== */
+
+function getImagePath(image) {
+
+    if (!image) {
+
+        return "";
+
+    }
+
+
+    image =
+        String(image);
+
+
+    if (
+        image.startsWith("/")
+    ) {
+
+        return image;
+
+    }
+
+
+    return "/" + image;
+
+}
+
+
+/* =====================================================
+   GET ALL IMAGES
+===================================================== */
+
+function getItemImages(item) {
+
+    if (
+        item.images &&
+        Array.isArray(item.images) &&
+        item.images.length > 0
+    ) {
+
+        return item.images;
+
+    }
+
+
+    if (item.image) {
+
+        return [
+            item.image
+        ];
+
+    }
+
+
+    return [];
+
+}
+
+
+/* =====================================================
+   LOAD PRODUCTS
+===================================================== */
+
+async function loadProducts() {
+
+    try {
+
+
+        if (!selectedCategory && !searchQuery) {
+
+    showEmpty(
+        "Category not selected."
+    );
+
+    return;
+
+}
+
+
+        /* PAGE TITLE */
+
+        if (searchQuery) {
+
+    document
+        .getElementById(
+            "categoryTitle"
+        )
+        .textContent =
+            'Search Results for "' +
+            searchQuery +
+            '"';
+
+} else {
+
+    document
+        .getElementById(
+            "categoryTitle"
+        )
+        .textContent =
+            selectedCategory +
+            " Collection";
+
+}
+
+
+        /* API */
+
+        const response =
+            await fetch(
+                "/api/jewellery"
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Server error"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        const jewellery =
+            data.jewellery || [];
+
+
+    /* =================================================
+   FILTER CATEGORY / SEARCH
+================================================= */
+
+let products = [];
+let similarProducts = [];
+
+
+/* =================================================
+   SEARCH RESULTS
+================================================= */
+
+if (searchQuery) {
+
+    const search =
+        searchQuery
+            .trim()
+            .toLowerCase();
+
+
+    /* MAIN SEARCH RESULTS */
+
+    /* =================================================
+   SMART SYNONYM SEARCH
+================================================= */
+
+/*
+   Common jewellery search words.
+
+   User kisi bhi related word ko search kare,
+   to uske related jewellery designs bhi milenge.
+*/
+
+const synonymGroups = {
+
+    ring: [
+        "ring",
+        "rings",
+        "anguthi",
+        "angoothi",
+        "unguthi"
+    ],
+
+    earring: [
+        "earring",
+        "earrings",
+        "ear ring",
+        "bali",
+        "baliyan",
+        "baliyaa",
+        "jhumka",
+        "jhumki",
+        "jhumke",
+        "tops",
+        "ear tops"
+    ],
+
+    necklace: [
+        "necklace",
+        "necklaces",
+        "haar",
+        "har",
+        "mala",
+        "neck less"
+    ],
+
+    chain: [
+        "chain",
+        "chains",
+        "gold chain",
+        "janjir",
+        "zanjir"
+    ],
+
+    bracelet: [
+        "bracelet",
+        "bracelets",
+        "kangan",
+        "kada",
+        "kada bracelet"
+    ],
+
+    bangle: [
+        "bangle",
+        "bangles",
+        "chudi",
+        "chudiya",
+        "choodi",
+        "churri"
+    ],
+
+    pendant: [
+        "pendant",
+        "pendents",
+        "locket",
+        "lockets",
+        "latkan"
+    ],
+
+    mangalsutra: [
+        "mangalsutra",
+        "mangal sutra",
+        "mangalsutr",
+        "mangal"
+    ],
+
+    nosepin: [
+        "nose pin",
+        "nosepin",
+        "nose ring",
+        "nath",
+        "nathni",
+        "phuli",
+        "phool"
+    ],
+
+    anklet: [
+        "anklet",
+        "anklets",
+        "payal",
+        "paayal",
+        "pajeb",
+        "pajeb"
+    ],
+
+    maangteeka: [
+        "maang teeka",
+        "mang teeka",
+        "mang tika",
+        "maang tika",
+        "maangtikka",
+        "tikka"
+    ],
+
+    jewellery: [
+        "jewellery",
+        "jewelry",
+        "jwellery",
+        "jewellery design",
+        "gold jewellery",
+        "gold jewelry",
+        "sona",
+        "gold"
+    ]
+
+};
+
+
+/* =================================================
+   GET SEARCH TERMS
+================================================= */
+
+function getSearchTerms(search) {
+
+    search =
+        String(search || "")
+            .trim()
+            .toLowerCase();
+
+
+    if (!search) {
+
+        return [];
+
+    }
+
+
+    /*
+       First search term itself
+       will always be included.
+    */
+
+    const terms = new Set();
+
+    terms.add(search);
+
+
+    /*
+       Check every synonym group.
+    */
+
+    Object.values(
+        synonymGroups
+    ).forEach(
+        group => {
+
+            /*
+               If user's search matches
+               ANY word in this group,
+               add ALL words from that group.
+            */
+
+            const matched =
+                group.some(
+                    word =>
+                        word
+                            .toLowerCase()
+                            .includes(search) ||
+
+                        search.includes(
+                            word.toLowerCase()
+                        )
+                );
+
+
+            if (matched) {
+
+                group.forEach(
+                    word => {
+
+                        terms.add(
+                            word.toLowerCase()
+                        );
+
+                    }
+                );
+
+            }
+
+        }
+    );
+
+
+    return Array.from(terms);
+
+}
+
+
+/* =================================================
+   SEARCH RESULTS
+================================================= */
+
+const searchTerms =
+    getSearchTerms(search);
+
+
+/* =================================================
+   FILTER PRODUCTS
+================================================= */
+
+products =
+    jewellery.filter(
+        item => {
+
+            const name =
+                String(
+                    item.name || ""
+                ).toLowerCase();
+
+            const category =
+                String(
+                    item.category || ""
+                ).toLowerCase();
+
+            const description =
+                String(
+                    item.description || ""
+                ).toLowerCase();
+
+
+            /* =================================================
+               ADMIN PANEL SYNONYMS
+            ================================================= */
+
+            let synonymsText = "";
+
+            if (
+                Array.isArray(item.synonyms)
+            ) {
+
+                synonymsText =
+                    item.synonyms
+                        .map(
+                            synonym =>
+                                String(
+                                    synonym || ""
+                                )
+                        )
+                        .join(" ")
+                        .toLowerCase();
+
+            } else {
+
+                synonymsText =
+                    String(
+                        item.synonyms || ""
+                    ).toLowerCase();
+
+            }
+
+
+            /* =================================================
+               SEARCH USING ALL SEARCH TERMS
+            ================================================= */
+
+            return searchTerms.some(
+                term => {
+
+                    term =
+                        String(
+                            term || ""
+                        )
+                        .trim()
+                        .toLowerCase();
+
+
+                    if (!term) {
+
+                        return false;
+
+                    }
+
+
+                    return (
+
+                        name.includes(term) ||
+
+                        category.includes(term) ||
+
+                        description.includes(term) ||
+
+                        synonymsText.includes(term)
+
+                    );
+
+                }
+            );
+
+        }
+    );
+    
+  
+
+
+
+    /* =================================================
+       REMAINING PRODUCTS
+       (OTHER CATEGORIES)
+    ================================================= */
+
+    const mainProductKeys =
+        new Set(
+            products.map(
+                item =>
+                    JSON.stringify(item)
+            )
+        );
+
+
+    const remainingProducts =
+        jewellery.filter(
+            item =>
+                !mainProductKeys.has(
+                    JSON.stringify(item)
+                )
+        );
+
+
+    /* =================================================
+       RANDOMIZE OTHER PRODUCTS
+    ================================================= */
+
+    similarProducts =
+        remainingProducts
+            .sort(
+                () => Math.random() - 0.5
+            );
+
+
+    /* PAGE TITLE */
+
+    document
+        .getElementById(
+            "categoryTitle"
+        )
+        .textContent =
+            'Search Results for "' +
+            searchQuery +
+            '"';
+
+
+/* =================================================
+   NORMAL CATEGORY PAGE
+================================================= */
+
+} else {
+
+    /* =================================================
+       NORMAL CATEGORY PAGE
+    ================================================= */
+
+    products =
+        jewellery.filter(
+            item =>
+
+                item.category &&
+
+                item.category
+                    .toLowerCase() ===
+                selectedCategory
+                    .toLowerCase()
+
+        );
+
+
+    /* =================================================
+       REMAINING PRODUCTS FOR SIMILAR DESIGNS
+    ================================================= */
+
+    const mainProductKeys =
+        new Set(
+            products.map(
+                item =>
+                    JSON.stringify(item)
+            )
+        );
+
+
+    const remainingProducts =
+        jewellery.filter(
+            item =>
+                !mainProductKeys.has(
+                    JSON.stringify(item)
+                )
+        );
+
+
+    /* =================================================
+       RANDOMIZE OTHER PRODUCTS
+    ================================================= */
+
+    similarProducts =
+        remainingProducts
+            .sort(
+                () => Math.random() - 0.5
+            );
+
+}
+
+
+
+
+
+/* =================================================
+   SAVE PRODUCTS FOR LOAD MORE
+================================================= */
+
+allMainProducts =
+    products;
+
+allSimilarProducts =
+    similarProducts;
+
+visibleProductCount =
+    PRODUCTS_PER_LOAD;
+
+
+
+        /* COUNT */
+
+        document
+            .getElementById(
+                "productCount"
+            )
+            .textContent =
+
+                products.length +
+                " Design" +
+                (
+                    products.length === 1
+                    ? ""
+                    : "s"
+                );
+
+
+        /* CONTAINER */
+
+        const container =
+            document.getElementById(
+                "productsContainer"
+            );
+
+
+        container.innerHTML = "";
+
+
+        /* EMPTY */
+
+        if (
+            products.length === 0
+        ) {
+
+            showEmpty(
+                "No designs available in this category yet."
+            );
+
+            return;
+
+        }
+
+        renderProducts();
+
+
+        /* =================================================
+           PRODUCTS
+        ================================================= */
+
+      /* =================================================
+   RENDER PRODUCTS
+================================================= */
+
+function renderProducts() {
+
+    const container =
+        document.getElementById(
+            "productsContainer"
+        );
+
+
+    container.innerHTML = "";
+
+
+    /* =================================================
+       MAIN PRODUCTS
+    ================================================= */
+
+    const productsToShow =
+        allMainProducts.slice(
+            0,
+            visibleProductCount
+        );
+
+
+    productsToShow.forEach(
+        item => {
+
+            const product =
+                document.createElement(
+                    "div"
+                );
+
+
+            product.className =
+                "product";
+
+
+            const images =
+                getItemImages(
+                    item
+                );
+
+
+            const firstImage =
+                images.length > 0
+                    ? getImagePath(
+                        images[0]
+                    )
+                    : "";
+
+
+            const weight =
+                item.weight
+                ?
+
+                `
+                <span class="weight">
+
+                    ⚖
+                    ${escapeHTML(
+                        item.weight
+                    )}
+                    Gram
+
+                </span>
+                `
+
+                : "";
+
+
+            product.innerHTML = `
+
+                ${
+                    firstImage
+
+                    ?
+
+                    `
+                    <img
+                        src="${escapeAttribute(
+                            firstImage
+                        )}"
+                        alt="${escapeAttribute(
+                            item.name ||
+                            "Jewellery"
+                        )}"
+                        class="product-image">
+                    `
+
+                    :
+
+                    `
+                    <div
+                        class="product-image"
+                        style="
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                            color:#999;
+                        "
+                    >
+                        No Photo
+                    </div>
+                    `
+                }
+
+
+                <div class="product-info">
+
+                    <h3>
+                        ${escapeHTML(
+                            item.name ||
+                            "Jewellery"
+                        )}
+                    </h3>
+
+
+                    ${weight}
+
+
+                    ${
+                        item.description
+
+                        ?
+
+                        `
+                        <p>
+                            ${escapeHTML(
+                                item.description
+                            )}
+                        </p>
+                        `
+
+                        : ""
+
+                    }
+
+                </div>
+
+            `;
+
+
+            /* IMAGE CLICK */
+
+            if (
+                images.length > 0
+            ) {
+
+                const image =
+                    product.querySelector(
+                        ".product-image"
+                    );
+
+
+                image.onclick =
+                    function() {
+
+                        openModal(
+                            item
+                        );
+
+                    };
+
+            }
+
+
+            container.appendChild(
+                product
+            );
+
+        }
+    );
+
+
+    /* =================================================
+       LOAD MORE BUTTON
+    ================================================= */
+
+    if (loadMoreBtn) {
+
+        if (
+            visibleProductCount <
+            allMainProducts.length
+        ) {
+
+            loadMoreBtn.style.display =
+                "block";
+
+            loadMoreBtn.textContent =
+                "Load More";
+
+        } else {
+
+            loadMoreBtn.style.display =
+                "none";
+
+        }
+
+    }
+
+
+    /* =================================================
+       YOU MAY ALSO LIKE
+    ================================================= */
+
+    if (
+        visibleProductCount >=
+            allMainProducts.length &&
+        allSimilarProducts.length > 0
+    ) {
+
+
+        const similarHeading =
+            document.createElement(
+                "div"
+            );
+
+
+        similarHeading.style.gridColumn =
+            "1 / -1";
+
+
+        similarHeading.style.textAlign =
+            "center";
+
+
+        similarHeading.style.padding =
+            "45px 10px 20px";
+
+
+        similarHeading.innerHTML = `
+
+            <div
+                style="
+                    color:#d4af37;
+                    font-size:11px;
+                    letter-spacing:3px;
+                    text-transform:uppercase;
+                    margin-bottom:8px;
+                "
+            >
+                You May Also Like
+            </div>
+
+
+            <h2
+                style="
+                    font-family:Georgia,serif;
+                    color:#9b7200;
+                    font-size:28px;
+                    margin:0;
+                "
+            >
+                Similar Designs
+            </h2>
+
+
+            <p
+                style="
+                    color:#888;
+                    font-size:13px;
+                    margin-top:8px;
+                "
+            >
+                Explore more beautiful jewellery
+            </p>
+
+        `;
+
+
+        container.appendChild(
+            similarHeading
+        );
+
+
+        /* =================================================
+           SIMILAR PRODUCTS
+        ================================================= */
+
+        allSimilarProducts.forEach(
+            item => {
+
+                const product =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                product.className =
+                    "product";
+
+
+                const images =
+                    getItemImages(
+                        item
+                    );
+
+
+                const firstImage =
+                    images.length > 0
+                        ? getImagePath(
+                            images[0]
+                        )
+                        : "";
+
+
+                const weight =
+                    item.weight
+                    ?
+
+                    `
+                    <span class="weight">
+
+                        ⚖
+                        ${escapeHTML(
+                            item.weight
+                        )}
+                        Gram
+
+                    </span>
+                    `
+
+                    : "";
+
+
+                product.innerHTML = `
+
+                    ${
+                        firstImage
+
+                        ?
+
+                        `
+                        <img
+                            src="${escapeAttribute(
+                                firstImage
+                            )}"
+                            alt="${escapeAttribute(
+                                item.name ||
+                                "Jewellery"
+                            )}"
+                            class="product-image">
+                        `
+
+                        :
+
+                        `
+                        <div
+                            class="product-image"
+                            style="
+                                display:flex;
+                                align-items:center;
+                                justify-content:center;
+                                color:#999;
+                            "
+                        >
+                            No Photo
+                        </div>
+                        `
+                    }
+
+
+                    <div class="product-info">
+
+                        <h3>
+                            ${escapeHTML(
+                                item.name ||
+                                "Jewellery"
+                            )}
+                        </h3>
+
+
+                        ${weight}
+
+
+                        ${
+                            item.description
+
+                            ?
+
+                            `
+                            <p>
+                                ${escapeHTML(
+                                    item.description
+                                )}
+                            </p>
+                            `
+
+                            : ""
+
+                        }
+
+                    </div>
+
+                `;
+
+
+                /* IMAGE CLICK */
+
+                if (
+                    images.length > 0
+                ) {
+
+                    const image =
+                        product.querySelector(
+                            ".product-image"
+                        );
+
+
+                    image.onclick =
+                        function() {
+
+                            openModal(
+                                item
+                            );
+
+                        };
+
+                }
+
+
+                container.appendChild(
+                    product
+                );
+
+            }
+        );
+
+    }
+
+}
+
+/* =================================================
+   LOAD MORE BUTTON CLICK
+================================================= */
+
+if (loadMoreBtn) {
+
+    loadMoreBtn.onclick = function() {
+
+        visibleProductCount +=
+            PRODUCTS_PER_LOAD;
+
+        renderProducts();
+
+    };
+
+}
+
+    } catch(error) {
+
+
+        console.log(
+            "Products could not be loaded.",
+            error
+        );
+
+
+        showEmpty(
+            "Unable to load jewellery designs."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+function showEmpty(
+    message
+) {
+
+    const container =
+        document.getElementById(
+            "productsContainer"
+        );
+
+
+    container.innerHTML = `
+
+        <div class="empty">
+
+            <h3>
+
+                ${escapeHTML(
+                    message
+                )}
+
+            </h3>
+
+            <p>
+                Please try another category.
+            </p>
+
+        </div>
+
+    `;
+
+
+    document
+        .getElementById(
+            "productCount"
+        )
+        .textContent = "";
+
+}
+
+
+/* =====================================================
+   BACK
+===================================================== */
+
+function goBack() {
+
+    window.location.href =
+        "categories.html";
+
+}
+
+
+/* =====================================================
+   OPEN MODAL
+===================================================== */
+
+function openModal(
+    item
+) {
+
+
+    currentItem =
+        item;
+
+
+    currentImages =
+        getItemImages(
+            item
+        );
+
+
+    currentPhotoIndex =
+        0;
+
+
+    if (
+        currentImages.length === 0
+    ) {
+
+        return;
+
+    }
+
+
+    const modal =
+        document.getElementById(
+            "imageModal"
+        );
+
+
+    /* NAME */
+
+    document
+        .getElementById(
+            "modalName"
+        )
+        .textContent =
+
+            item.name ||
+            "Jewellery";
+
+
+    /* DESCRIPTION */
+
+    document
+        .getElementById(
+            "modalDescription"
+        )
+        .textContent =
+
+            item.description ||
+            "";
+
+
+    /* WEIGHT */
+
+    document
+        .getElementById(
+            "modalWeight"
+        )
+        .textContent =
+
+            item.weight
+
+            ?
+
+            "Weight: " +
+            item.weight +
+            " Gram"
+
+            :
+
+            "";
+
+
+    /* WHATSAPP */
+
+    const message =
+
+        "Hello Krishna Jewellers, I am interested in " +
+
+        (
+            item.name ||
+            "this jewellery design"
+        ) +
+
+        (
+            item.weight
+
+            ?
+
+            " (" +
+            item.weight +
+            " Gram)"
+
+            :
+
+            ""
+
+        );
+
+
+    document
+        .getElementById(
+            "modalWhatsapp"
+        )
+        .href =
+
+            "https://wa.me/919984123388?text=" +
+
+            encodeURIComponent(
+                message
+            );
+
+
+    /* SHOW FIRST PHOTO */
+
+    updateModalPhoto();
+
+
+    /* SHOW GALLERY */
+
+    createModalGallery();
+
+
+    modal.style.display =
+        "flex";
+
+}
+
+
+/* =====================================================
+   UPDATE MODAL PHOTO
+===================================================== */
+
+function updateModalPhoto() {
+
+
+    if (
+        currentImages.length === 0
+    ) {
+
+        return;
+
+    }
+
+
+    const modalImage =
+        document.getElementById(
+            "modalImage"
+        );
+
+
+    modalImage.src =
+        getImagePath(
+            currentImages[
+                currentPhotoIndex
+            ]
+        );
+
+
+    /* COUNTER */
+
+    const counter =
+        document.getElementById(
+            "photoCounter"
+        );
+
+
+    counter.textContent =
+
+        (
+            currentPhotoIndex + 1
+        ) +
+
+        " / " +
+
+        currentImages.length;
+
+
+    /* BUTTONS */
+
+    const prev =
+        document.getElementById(
+            "photoPrev"
+        );
+
+
+    const next =
+        document.getElementById(
+            "photoNext"
+        );
+
+
+    if (
+        currentImages.length > 1
+    ) {
+
+        prev.style.display =
+            "block";
+
+        next.style.display =
+            "block";
+
+        counter.style.display =
+            "block";
+
+    } else {
+
+        prev.style.display =
+            "none";
+
+        next.style.display =
+            "none";
+
+        counter.style.display =
+            "none";
+
+    }
+
+
+    updateActiveThumbnail();
+
+}
+
+
+/* =====================================================
+   CREATE THUMBNAILS
+===================================================== */
+
+function createModalGallery() {
+
+
+    const gallery =
+        document.getElementById(
+            "modalGallery"
+        );
+
+
+    gallery.innerHTML = "";
+
+
+    if (
+        currentImages.length <= 1
+    ) {
+
+        gallery.style.display =
+            "none";
+
+        return;
+
+    }
+
+
+    gallery.style.display =
+        "flex";
+
+
+    currentImages.forEach(
+        (
+            image,
+            index
+        ) => {
+
+
+            const thumbnail =
+                document.createElement(
+                    "img"
+                );
+
+
+            thumbnail.src =
+                getImagePath(
+                    image
+                );
+
+
+            thumbnail.alt =
+                "Jewellery Photo " +
+                (
+                    index + 1
+                );
+
+
+            thumbnail.className =
+                "modal-thumb";
+
+
+            thumbnail.onclick =
+                function() {
+
+                    currentPhotoIndex =
+                        index;
+
+                    updateModalPhoto();
+
+                };
+
+
+            gallery.appendChild(
+                thumbnail
+            );
+
+        }
+    );
+
+
+    updateActiveThumbnail();
+
+}
+
+
+/* =====================================================
+   ACTIVE THUMBNAIL
+===================================================== */
+
+function updateActiveThumbnail() {
+
+
+    const thumbnails =
+        document.querySelectorAll(
+            ".modal-thumb"
+        );
+
+
+    thumbnails.forEach(
+        (
+            thumbnail,
+            index
+        ) => {
+
+
+            if (
+                index ===
+                currentPhotoIndex
+            ) {
+
+                thumbnail.classList
+                    .add("active");
+
+            } else {
+
+                thumbnail.classList
+                    .remove("active");
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   NEXT PHOTO
+===================================================== */
+
+function nextPhoto() {
+
+
+    if (
+        currentImages.length <= 1
+    ) {
+
+        return;
+
+    }
+
+
+    currentPhotoIndex =
+
+        (
+            currentPhotoIndex + 1
+        ) %
+        currentImages.length;
+
+
+    updateModalPhoto();
+
+}
+
+
+/* =====================================================
+   PREVIOUS PHOTO
+===================================================== */
+
+function previousPhoto() {
+
+
+    if (
+        currentImages.length <= 1
+    ) {
+
+        return;
+
+    }
+
+
+    currentPhotoIndex =
+
+        (
+            currentPhotoIndex - 1 +
+            currentImages.length
+        ) %
+        currentImages.length;
+
+
+    updateModalPhoto();
+
+}
+
+
+/* =====================================================
+   CLOSE MODAL
+===================================================== */
+
+function closeModal() {
+
+    document
+        .getElementById(
+            "imageModal"
+        )
+        .style.display =
+            "none";
+
+
+    currentItem =
+        null;
+
+
+    currentImages =
+        [];
+
+
+    currentPhotoIndex =
+        0;
+
+}
+
+
+/* =====================================================
+   CLOSE OUTSIDE
+===================================================== */
+
+window.addEventListener(
+    "click",
+    function(event) {
+
+
+        const modal =
+            document.getElementById(
+                "imageModal"
+            );
+
+
+        if (
+            event.target === modal
+        ) {
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   ESCAPE
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+
+        if (
+            event.key ===
+            "Escape"
+        ) {
+
+            closeModal();
+
+        }
+
+
+        if (
+            event.key ===
+            "ArrowRight"
+        ) {
+
+            nextPhoto();
+
+        }
+
+
+        if (
+            event.key ===
+            "ArrowLeft"
+        ) {
+
+            previousPhoto();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   SECURITY
+===================================================== */
+
+function escapeHTML(
+    value
+) {
+
+    return String(
+        value ?? ""
+    )
+
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+
+    .replace(
+        /</g,
+        "&lt;"
+    )
+
+    .replace(
+        />/g,
+        "&gt;"
+    )
+
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+
+    .replace(
+        /'/g,
+        "&#039;"
+    );
+
+}
+
+
+function escapeAttribute(
+    value
+) {
+
+    return escapeHTML(
+        value
+    );
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadProducts();
+
+
+/* =====================================================
+   MOBILE TOUCH SWIPE
+===================================================== */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+const modalImage =
+    document.getElementById("modalImage");
+
+
+modalImage.addEventListener(
+    "touchstart",
+    function(event) {
+
+        touchStartX =
+            event.changedTouches[0].screenX;
+
+    },
+    { passive: true }
+);
+
+
+modalImage.addEventListener(
+    "touchend",
+    function(event) {
+
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+        handleSwipe();
+
+    },
+    { passive: true }
+);
+
+
+function handleSwipe() {
+
+    const swipeDistance =
+        touchEndX - touchStartX;
+
+
+    /* Ignore very small movement */
+
+    if (
+        Math.abs(swipeDistance) < 50
+    ) {
+
+        return;
+
+    }
+
+
+    /* Swipe LEFT = NEXT */
+
+    if (
+        swipeDistance < 0
+    ) {
+
+        nextPhoto();
+
+    }
+
+
+    /* Swipe RIGHT = PREVIOUS */
+
+    else {
+
+        previousPhoto();
+
+    }
+
+}
+
+</script>
+
+</body>
+
+</html>

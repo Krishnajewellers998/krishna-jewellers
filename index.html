@@ -1,0 +1,3027 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Krishna Jewellers - Discover beautifully crafted gold jewellery in Rath, Uttar Pradesh.">
+
+<title>Krishna Jewellers | Fine Gold Jewellery</title>
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: clip;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #fff;
+    color: #222;
+    overflow-x: clip;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+    --gold: #d4af37;
+    --gold-dark: #a67c00;
+    --gold-light: #f6e7a8;
+
+    --black: #0b0b0b;
+    --cream: #fffaf0;
+
+    --text: #222;
+    --muted: #777;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 3000;
+    width: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #080808,
+            #171717,
+            #080808
+        );
+
+    border-bottom: 1px solid rgba(212,175,55,0.35);
+
+    box-shadow:
+        0 5px 25px rgba(0,0,0,0.35);
+}
+
+
+.navbar {
+    width: 100%;
+    max-width: 1250px;
+
+    min-height: 78px;
+
+    margin: auto;
+    padding: 12px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--gold);
+
+    font-family: Georgia, serif;
+
+    font-size: 21px;
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+
+.logo img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+}
+
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.logo-text small {
+    color: #aaa;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-top: 2px;
+}
+
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+
+nav a {
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    position: relative;
+
+    white-space: nowrap;
+
+    transition: 0.3s;
+}
+
+
+nav a:hover {
+    color: var(--gold);
+}
+
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--gold);
+
+    transition: 0.3s;
+}
+
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+.menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 38px;
+
+    background: transparent;
+
+    border: 1px solid var(--gold);
+
+    color: var(--gold);
+
+    border-radius: 8px;
+
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+    width: 100%;
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(212,175,55,0.20),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(212,175,55,0.16),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #050505,
+            #19160e,
+            #070707
+        );
+}
+
+
+.hero::before {
+    content: "✦";
+
+    position: absolute;
+
+    top: 90px;
+    left: 8%;
+
+    color: rgba(212,175,55,0.3);
+
+    font-size: 75px;
+}
+
+
+.hero::after {
+    content: "✧";
+
+    position: absolute;
+
+    bottom: 70px;
+    right: 8%;
+
+    color: rgba(212,175,55,0.3);
+
+    font-size: 100px;
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 850px;
+
+    padding: 40px 20px;
+
+    animation: fadeUp 1s ease;
+}
+
+
+.hero-small {
+    display: inline-block;
+
+    color: var(--gold);
+
+    border: 1px solid rgba(212,175,55,0.45);
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(45px, 7vw, 82px);
+
+    line-height: 1;
+
+    color: var(--gold);
+
+    margin-bottom: 20px;
+}
+
+
+.hero h2 {
+    color: #fff;
+
+    font-family: Georgia, serif;
+
+    font-weight: normal;
+
+    font-size: clamp(23px, 4vw, 35px);
+
+    margin-bottom: 20px;
+}
+
+
+.hero p {
+    color: #d5d5d5;
+
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+.hero-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 32px;
+
+    padding: 15px 32px;
+
+    border-radius: 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0d477,
+            #b8860b
+        );
+
+    color: #111;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.hero-button:hover {
+    transform: translateY(-4px);
+}
+
+
+/* =====================================================
+   COMMON SECTION
+===================================================== */
+
+.section {
+    width: 100%;
+    padding: 85px 20px;
+}
+
+
+.section-heading {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto 45px;
+
+    text-align: center;
+}
+
+
+.section-label {
+    color: var(--gold-dark);
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(30px, 5vw, 43px);
+
+    color: #222;
+
+    margin-bottom: 12px;
+}
+
+
+.section-heading p {
+    color: var(--muted);
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   GOLD RATE
+===================================================== */
+
+.gold-rate {
+    width: 100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fff8df,
+            #fff
+        );
+
+    padding: 10px 12px 18px;
+}
+
+
+.gold-rate-title {
+    width: 100%;
+
+    text-align: center;
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            90deg,
+            #9b7200,
+            #d4af37,
+            #9b7200
+        );
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    padding: 7px 8px;
+
+    border-radius: 7px 7px 0 0;
+}
+
+
+.gold-rates {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0,1fr));
+
+    gap: 6px;
+
+    padding: 0 10px;
+}
+
+
+.rate-card {
+    position: relative;
+
+    width: 100%;
+
+    background: #fff;
+
+    padding: 9px 5px;
+
+    text-align: center;
+
+    border-radius: 0 0 5px 5px;
+
+    border: 1px solid #ead9a3;
+
+    box-shadow:
+        0 3px 10px rgba(0,0,0,0.08);
+}
+
+
+.rate-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: var(--gold);
+}
+
+
+.rate-card h3 {
+    color: #9b7200;
+
+    font-family: Georgia, serif;
+
+    font-size: 9px;
+
+    margin-bottom: 5px;
+}
+
+
+.rate-price {
+    font-size: 13px;
+
+    font-weight: bold;
+
+    color: #111;
+
+    white-space: nowrap;
+}
+
+
+.updated {
+    text-align: center;
+
+    margin-top: 4px;
+
+    color: #777;
+
+    font-size: 8px;
+}
+
+
+/* =====================================================
+   BANNER
+===================================================== */
+
+.gold-banner {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: 10px auto 0;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+}
+
+
+.gold-banner img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+
+
+/* =====================================================
+   SEARCH BAR — STICKY
+===================================================== */
+
+.search-section {
+    width: 100%;
+    padding: 12px 20px 12px;
+    background: #fff;
+
+    position: sticky;
+    top: 78px;
+
+    z-index: 2500;
+
+    border-bottom: 1px solid #ead9a3;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+}
+
+
+/* =====================================================
+   SEARCH BAR — STICKY
+===================================================== */
+
+.search-section {
+    width: 100%;
+
+    padding: 12px 20px;
+
+    background: #fff;
+
+    position: sticky;
+    top: 78px;
+
+    z-index: 2500;
+
+    border-bottom: 1px solid #ead9a3;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+
+    /* IMPORTANT */
+    align-self: flex-start;
+}
+
+
+/* SEARCH BOX */
+
+.search-box {
+    width: 100%;
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    background: #fff;
+
+    padding: 7px;
+
+    border: 1px solid #ead9a3;
+
+    border-radius: 40px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.08);
+}
+
+
+/* INPUT */
+
+.search-box input {
+    flex: 1;
+
+    min-width: 0;
+
+    border: none;
+
+    outline: none;
+
+    padding: 12px 17px;
+
+    font-size: 14px;
+
+    color: #333;
+
+    background: transparent;
+}
+
+
+.search-box input::placeholder {
+    color: #999;
+}
+
+
+/* SEARCH BUTTON */
+
+.search-box button {
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d4af37,
+            #a67c00
+        );
+
+    color: #fff;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    white-space: nowrap;
+
+    transition: 0.2s;
+}
+
+
+.search-box button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:700px) {
+
+    .search-section {
+
+        padding: 8px 10px;
+
+        top: 64px;
+
+        background: #fff;
+
+        border-bottom: 1px solid #ead9a3;
+
+        box-shadow:
+            0 3px 10px rgba(0,0,0,0.08);
+    }
+
+
+    .search-box {
+
+        padding: 4px;
+
+        gap: 4px;
+
+        border-radius: 35px;
+    }
+
+
+    .search-box input {
+
+        padding: 10px 12px;
+
+        font-size: 13px;
+    }
+
+
+    .search-box button {
+
+        padding: 9px 13px;
+
+        font-size: 11px;
+    }
+
+}
+
+
+
+/* =====================================================
+   COLLECTION
+===================================================== */
+
+
+
+
+
+
+
+.collection {
+    background: #fff;
+}
+
+
+.categories {
+    width: 100%;
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0,1fr));
+
+    gap: 16px;
+}
+
+
+
+/* =====================================================
+   CATEGORY CARDS — PREMIUM IMAGE DESIGN
+===================================================== */
+
+.categories {
+    width: 100%;
+    max-width: 1050px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+.category-card {
+    position: relative;
+
+    width: 100%;
+
+    background: #fff;
+
+    border: 1px solid #ead9a3;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 22px rgba(0,0,0,0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.category-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--gold);
+
+    box-shadow:
+        0 14px 32px rgba(0,0,0,0.12);
+}
+
+
+/* CATEGORY IMAGE */
+
+.category-image {
+    width: 100%;
+
+    height: 190px;
+
+    display: block;
+
+    object-fit: cover;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf7,
+            #fff8e7
+        );
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.category-card:hover .category-image {
+    transform: scale(1.04);
+}
+
+
+/* CATEGORY INFO */
+
+.category-info {
+    padding: 16px 15px 18px;
+
+    text-align: center;
+
+    background: #fff;
+}
+
+
+.category-card h3 {
+    color: #8f6c08;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    margin-bottom: 7px;
+
+    text-transform: capitalize;
+}
+
+
+.category-link {
+    color: #a67c00;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =====================================================
+   CATEGORY MOBILE
+===================================================== */
+
+@media (max-width:700px) {
+
+    .categories {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 12px;
+    }
+
+
+    .category-card {
+        border-radius: 13px;
+    }
+
+
+    .category-image {
+        height: 145px;
+    }
+
+
+    .category-info {
+        padding: 12px 7px 14px;
+    }
+
+
+    .category-card h3 {
+        font-size: 16px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .category-link {
+        font-size: 10px;
+    }
+
+}
+
+
+
+
+/* =====================================================
+   CATEGORY SEARCH BAR
+===================================================== */
+
+.category-search {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 25px;
+    position: relative;
+}
+
+.category-search input {
+    width: 100%;
+    height: 48px;
+    padding: 0 18px 0 45px;
+
+    border: 1px solid #ead9a3;
+    border-radius: 30px;
+
+    background: #fff;
+
+    color: #222;
+    font-size: 14px;
+
+    outline: none;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.06);
+
+    transition: 0.3s;
+}
+
+.category-search input:focus {
+    border-color: var(--gold);
+
+    box-shadow:
+        0 5px 20px rgba(212,175,55,0.18);
+}
+
+.category-search::before {
+    content: "🔍";
+
+    position: absolute;
+
+    left: 16px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 17px;
+
+    z-index: 2;
+}
+
+.category-search input::placeholder {
+    color: #999;
+}
+
+
+/* MOBILE */
+
+@media (max-width:700px) {
+
+    .category-search {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .category-search input {
+        height: 45px;
+        font-size: 13px;
+    }
+
+}
+
+
+
+
+
+/* =====================================================
+   VIEW ALL
+===================================================== */
+
+.view-all-categories {
+    display: block;
+
+    width: 100%;
+    max-width: 260px;
+
+    margin: 25px auto 0;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c49a18,
+            #a67c00
+        );
+
+    color: #fff;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+
+.view-all-categories:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   FAMILY — COMPACT PROFESSIONAL
+===================================================== */
+
+.family {
+    width: 100%;
+
+    background:
+
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(212,175,55,0.12),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(212,175,55,0.10),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            135deg,
+            #080808,
+            #17140d,
+            #080808
+        );
+
+    color: white;
+
+    overflow: hidden;
+
+    /* compact */
+    padding: 55px 20px 48px;
+}
+
+
+.family .section-heading {
+    margin-bottom: 28px;
+}
+
+
+.family .section-heading h2 {
+    color: white;
+
+    font-size: clamp(28px, 4vw, 39px);
+
+    margin-bottom: 9px;
+}
+
+
+.family .section-heading p {
+    color: #aaa;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.family .section-label {
+    color: var(--gold);
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 7px;
+}
+
+
+.family-grid {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0,1fr));
+
+    gap: 14px;
+}
+
+
+.family-card {
+    width: 100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(212,175,55,0.25);
+
+    border-radius: 14px;
+
+    overflow: hidden;
+
+    text-align: center;
+}
+
+
+.family-photo {
+    width: 100%;
+
+
+    /* OLD 300px -> NEW COMPACT */
+    height: 220px;
+
+
+    object-fit: contain;
+    object-position: center;
+    background: #111;
+
+    display: block;
+}
+
+
+.family-info {
+    padding: 11px 7px 14px;
+}
+
+
+.family-info h3 {
+    color: var(--gold);
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    line-height: 1.3;
+
+    margin-bottom: 5px;
+}
+
+
+.family-info span {
+    color: #aaa;
+
+    font-size: 9px;
+
+    letter-spacing: 1.4px;
+
+    text-transform: uppercase;
+}
+
+
+.family-quote {
+    width: 100%;
+    max-width: 780px;
+
+    margin: 27px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(212,175,55,0.25);
+
+    text-align: center;
+
+    color: #c9c9c9;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    font-style: italic;
+}
+
+
+/* =====================================================
+   LOCATION + CONTACT COMBINED
+===================================================== */
+
+.visit-contact {
+    width: 100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffaf0,
+            #fff
+        );
+
+    padding: 48px 20px;
+}
+
+
+.visit-contact-inner {
+    width: 100%;
+    max-width: 1050px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    background: #fff;
+
+    border: 1px solid #ead9a3;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.07);
+}
+
+
+/* LEFT SIDE */
+
+.location-side {
+    padding: 32px 30px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf7,
+            #fff8e7
+        );
+}
+
+
+.location-side .section-label,
+.contact-side .section-label {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 7px;
+}
+
+
+.location-side h2,
+.contact-side h2 {
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    margin-bottom: 9px;
+}
+
+
+.location-side h2 {
+    color: #9b7200;
+}
+
+
+.location-side > p {
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    margin-bottom: 16px;
+}
+
+
+.location-box {
+    width: 100%;
+
+    max-width: 380px;
+
+    margin: auto;
+
+    padding: 18px 15px;
+
+    background: rgba(255,255,255,0.85);
+
+    border-radius: 12px;
+
+    border: 1px solid #ead9a3;
+
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.05);
+}
+
+
+.location-icon {
+    font-size: 27px;
+
+    margin-bottom: 7px;
+}
+
+
+.location-box h2 {
+    font-size: 17px;
+
+    color: #333;
+
+    margin-bottom: 6px;
+}
+
+
+.location-box p {
+    color: #666;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+}
+
+
+.map-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 10px 18px;
+
+    border-radius: 7px;
+
+    background: #111;
+
+    color: #fff;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+.map-btn:hover {
+    transform: translateY(-2px);
+
+    background: #222;
+}
+
+
+/* DIVIDER */
+
+.contact-side {
+    padding: 32px 30px;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-left: 1px solid #ead9a3;
+
+    background: #fff;
+}
+
+
+.contact-side .section-label {
+    color: var(--gold-dark);
+}
+
+
+.contact-side h2 {
+    color: #222;
+}
+
+
+.contact-side p {
+    max-width: 390px;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+}
+
+
+.contact-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 22px;
+
+    border-radius: 25px;
+
+    background: #25D366;
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 15px rgba(37,211,102,0.20);
+
+    transition: 0.3s;
+}
+
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(37,211,102,0.30);
+}
+
+/* =====================================================
+   INSTAGRAM + FACEBOOK — CONTACT
+===================================================== */
+
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 12px;
+}
+
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.social-btn {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #d4af37;
+    border-radius: 50%;
+
+    background: #fff;
+
+    color: #a67c00;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 2px 8px rgba(0,0,0,0.06);
+}
+
+.social-btn:hover {
+    background: #111;
+    color: #d4af37;
+
+    transform: translateY(-2px);
+}
+
+.social-btn svg {
+    width: 17px;
+    height: 17px;
+}
+
+.social-name {
+    color: #777;
+    font-size: 9px;
+    line-height: 1;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    width: 100%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #080808,
+            #17140d,
+            #080808
+        );
+
+    color: #777;
+
+    text-align: center;
+
+    padding: 22px 15px;
+
+    font-size: 12px;
+}
+
+
+.footer-brand {
+    color: var(--gold);
+
+    font-family: Georgia, serif;
+
+    font-size: 18px;
+
+    margin-bottom: 6px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width:700px) {
+
+    .navbar {
+        min-height: 64px;
+
+        padding: 8px 14px;
+
+        gap: 8px;
+    }
+
+
+    .logo {
+        flex: 1;
+
+        min-width: 0;
+
+        gap: 8px;
+
+        font-size: 17px;
+    }
+
+
+    .logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+
+    .logo-text {
+        min-width: 0;
+
+        overflow: hidden;
+    }
+
+
+    .logo-text span {
+        white-space: nowrap;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+    }
+
+
+    .logo-text small {
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .menu-btn {
+        display: block;
+    }
+
+
+    nav {
+        display: none;
+
+        position: absolute;
+
+        left: 10px;
+        right: 10px;
+
+        top: 66px;
+
+        background: #111;
+
+        border: 1px solid rgba(212,175,55,0.25);
+
+        border-radius: 12px;
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+
+    nav.active {
+        display: flex;
+    }
+
+
+    nav a {
+        width: 100%;
+
+        text-align: center;
+
+        padding: 8px;
+    }
+
+
+    nav a::after {
+        display: none;
+    }
+
+
+    .hero {
+        min-height: 540px;
+
+        padding: 30px 14px;
+    }
+
+
+    .hero h1 {
+        font-size: clamp(34px,11vw,48px);
+    }
+
+
+    .hero h2 {
+        font-size: clamp(21px,6vw,28px);
+    }
+
+
+    .hero p {
+        font-size: 14px;
+    }
+
+
+    .hero-button {
+        padding: 13px 20px;
+    }
+
+
+    .section {
+        padding: 55px 14px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 30px;
+    }
+
+
+    .gold-rates {
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+
+        gap: 5px;
+    }
+
+
+    .rate-card {
+        padding: 9px 3px;
+    }
+
+
+    .rate-card h3 {
+        font-size: 8px;
+    }
+
+
+    .rate-price {
+        font-size: 12px;
+    }
+
+
+    .gold-banner img {
+        height: 220px;
+
+        object-fit: cover;
+    }
+
+
+    .categories {
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        gap: 10px;
+    }
+
+
+    .category-card {
+        padding: 20px 7px;
+
+        border-radius: 12px;
+    }
+
+
+    .category-icon {
+        width: 48px;
+        height: 48px;
+
+        font-size: 20px;
+    }
+
+
+    .category-card h3 {
+        font-size: 16px;
+    }
+
+
+    /* ================================================
+       FAMILY MOBILE — COMPACT
+    ================================================ */
+
+    .family {
+        padding: 42px 12px 38px;
+    }
+
+
+    .family .section-heading {
+        margin-bottom: 20px;
+    }
+
+
+    .family .section-heading h2 {
+        font-size: 28px;
+    }
+
+
+    .family .section-heading p {
+        font-size: 12px;
+
+        max-width: 330px;
+
+        margin: auto;
+    }
+
+
+    .family-grid {
+        display: flex;
+
+        overflow-x: auto;
+
+        gap: 10px;
+
+        scroll-snap-type: x mandatory;
+
+        scrollbar-width: none;
+
+        padding: 3px 3px 10px;
+    }
+
+
+    .family-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .family-card {
+        flex: 0 0 66%;
+
+        min-width: 66%;
+
+        scroll-snap-align: center;
+
+        border-radius: 12px;
+    }
+
+
+    .family-photo {
+        height: 210px;
+        object-fit: contain;
+        object-position: center;
+        background: #111;
+
+    }
+
+
+    .family-info {
+        padding: 9px 5px 11px;
+    }
+
+
+    .family-info h3 {
+        font-size: 13px;
+
+        line-height: 1.25;
+    }
+
+
+    .family-info span {
+        font-size: 8px;
+    }
+
+
+    .family-quote {
+        margin-top: 18px;
+
+        padding-top: 15px;
+
+        font-size: 12px;
+
+        line-height: 1.55;
+    }
+
+
+    /* ================================================
+       LOCATION + CONTACT MOBILE
+    ================================================ */
+
+    .visit-contact {
+        padding: 28px 12px;
+    }
+
+
+    .visit-contact-inner {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        border-radius: 14px;
+    }
+
+
+    .location-side {
+        padding: 25px 15px 22px;
+    }
+
+
+    .location-side h2,
+    .contact-side h2 {
+        font-size: 23px;
+    }
+
+
+    .location-side > p {
+        font-size: 12px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .location-box {
+        padding: 14px 10px;
+    }
+
+
+    .location-icon {
+        font-size: 24px;
+
+        margin-bottom: 5px;
+    }
+
+
+    .location-box h2 {
+        font-size: 16px;
+    }
+
+
+    .location-box p {
+        font-size: 11px;
+
+        margin-bottom: 10px;
+    }
+
+
+    .map-btn {
+        width: auto;
+
+        padding: 9px 15px;
+
+        font-size: 11px;
+    }
+
+
+    .contact-side {
+        padding: 24px 15px 28px;
+
+        border-left: none;
+
+        border-top: 1px solid #ead9a3;
+    }
+
+
+    .contact-side p {
+        font-size: 12px;
+
+        line-height: 1.55;
+
+        margin-bottom: 12px;
+
+        max-width: 320px;
+    }
+
+
+    .contact-btn {
+        width: auto;
+
+        padding: 10px 20px;
+
+        font-size: 11px;
+    }
+
+
+    footer {
+        padding: 20px 12px;
+
+        font-size: 11px;
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+<div class="navbar">
+
+<a href="index.html" class="logo">
+
+<img
+src="images/logo.png"
+alt="Krishna Jewellers Logo">
+
+<div class="logo-text">
+
+<span>
+Krishna Jewellers
+</span>
+
+<small>
+Fine Jewellery
+</small>
+
+</div>
+
+</a>
+
+
+<button
+class="menu-btn"
+onclick="toggleMenu()">
+
+☰
+
+</button>
+
+<nav id="mainNav">
+
+<a
+href="https://www.instagram.com/_krishna_jewellers_rath/"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Instagram">
+
+<svg
+viewBox="0 0 24 24"
+width="20"
+height="20"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<rect x="3" y="3" width="18" height="18" rx="5"></rect>
+<circle cx="12" cy="12" r="4"></circle>
+<circle cx="17.5" cy="6.5" r="1"></circle>
+
+</svg>
+
+</a>
+
+
+<a
+href="https://www.facebook.com/share/18rPmNgVsh/?mibextid=wwXIfr"
+target="_blank"
+rel="noopener noreferrer"
+aria-label="Facebook">
+
+<svg
+viewBox="0 0 24 24"
+width="20"
+height="20"
+fill="currentColor">
+
+<path d="M14 8h3V4h-3c-3.3 0-5 2-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.7.3-1 1-1z"></path>
+
+</svg>
+
+</a>
+
+
+<a href="#collection">
+Collection
+</a>
+
+<a href="#family">
+Our Family
+</a>
+
+<a href="#location">
+Location
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<!--
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="hero-small">
+Since Generations
+</div>
+
+<h1>
+Krishna Jewellers
+</h1>
+
+<h2>
+Fine Gold Jewellery
+</h2>
+
+<p>
+Discover beautifully crafted gold jewellery
+designed for every special moment of your life.
+</p>
+
+<a
+href="#collection"
+class="hero-button">
+
+Explore Collection
+
+</a>
+
+</div>
+
+</section>
+-->
+
+
+<!-- =====================================================
+     GOLD RATE
+===================================================== -->
+
+<section
+class="gold-rate"
+id="gold-rate">
+
+<div class="gold-rate-title">
+
+LIVE GOLD RATES
+<span>(Per 10 Gram)</span>
+
+</div>
+
+
+<div class="gold-rates">
+
+
+<div class="rate-card">
+
+<h3>
+24K GOLD
+</h3>
+
+<div
+class="rate-price"
+id="rate24Display">
+
+Loading...
+
+</div>
+
+</div>
+
+
+<div class="rate-card">
+
+<h3>
+22K GOLD
+</h3>
+
+<div
+class="rate-price"
+id="rate22Display">
+
+Loading...
+
+</div>
+
+</div>
+
+
+<div class="rate-card">
+
+<h3>
+18K GOLD
+</h3>
+
+<div
+class="rate-price"
+id="rate18Display">
+
+Loading...
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="updated">
+● Updated just now
+</div>
+
+
+<div class="gold-banner">
+
+<img
+src="images/banner.jpg"
+alt="Krishna Jewellers Offer">
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     COLLECTION
+===================================================== -->
+
+<!-- =====================================================
+     SEARCH JEWELLERY
+===================================================== -->
+
+<section class="search-section">
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="jewellerySearch"
+            placeholder="Search jewellery design..."
+            autocomplete="off"
+        >
+
+        <button
+            type="button"
+            onclick="searchJewellery()">
+            🔍 Search
+        </button>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<section
+class="section collection"
+id="collection">
+
+<div class="section-heading">
+
+<div class="section-label">
+Our Collection
+</div>
+
+<h2>
+Jewellery Collection
+</h2>
+
+<p>
+Explore our jewellery designs category-wise
+and discover something special for every occasion.
+</p>
+
+</div>
+
+
+<div
+class="categories"
+id="categoryContainer">
+
+<p style="text-align:center;">
+Loading categories...
+</p>
+
+</div>
+
+
+<button
+class="view-all-categories"
+id="viewAllButton"
+style="display:none;">
+
+View All Categories
+
+</button>
+
+</section>
+
+
+
+<!-- =====================================================
+     FAMILY
+===================================================== -->
+
+<section
+class="section family"
+id="family">
+
+<div class="section-heading">
+
+<div class="section-label">
+Our Family
+</div>
+
+<h2>
+Our Family, Our Legacy
+</h2>
+
+<p>
+A jewellery business is built with trust,
+relationships and generations of dedication.
+</p>
+
+</div>
+
+
+<div class="family-grid">
+
+
+<div class="family-card">
+
+<img
+src="images/papa.jpg"
+class="family-photo"
+alt="Swargiya Shree Brij Kishor Soni">
+
+<div class="family-info">
+
+<h3>
+Swargiya Shree<br>
+Brij Kishor Soni
+</h3>
+
+<span>
+In Loving Memory
+</span>
+
+</div>
+
+</div>
+
+
+<div class="family-card">
+
+<img
+src="images/tauji.jpg"
+class="family-photo"
+alt="Shree Nand Kishor Soni">
+
+<div class="family-info">
+
+<h3>
+Shree Nand Kishor Soni
+</h3>
+
+<span>
+Family
+</span>
+
+</div>
+
+</div>
+
+
+<div class="family-card">
+
+<img
+src="images/rahul.jpg"
+class="family-photo"
+alt="Rahul Soni">
+
+<div class="family-info">
+
+<h3>
+Rahul Soni
+</h3>
+
+<span>
+Family
+</span>
+
+</div>
+
+</div>
+
+
+<div class="family-card">
+
+<img
+src="images/krishna.jpg"
+class="family-photo"
+alt="Krishna Soni">
+
+<div class="family-info">
+
+<h3>
+Krishna Soni
+</h3>
+
+<span>
+Family
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="family-quote">
+
+"Jewellery may be made of gold,
+but the true value of a family business
+is built on trust, love and generations."
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     LOCATION + CONTACT COMBINED
+===================================================== -->
+
+<section
+class="visit-contact"
+id="location">
+
+<div class="visit-contact-inner">
+
+
+<!-- LOCATION -->
+
+<div class="location-side">
+
+<div class="section-label">
+Visit Us
+</div>
+
+<h2>
+Find Krishna Jewellers
+</h2>
+
+<p>
+We would be happy to welcome you at our showroom.
+</p>
+
+
+<div class="location-box">
+
+<div class="location-icon">
+📍
+</div>
+
+<h2>
+Krishna Jewellers
+</h2>
+
+<p>
+Khushipura, Rath,<br>
+Uttar Pradesh 210431
+</p>
+
+
+<a
+href="https://www.google.com/maps/place/krishna+jewellers,+Khushipura,+Rath,+Uttar+Pradesh+210431/@25.5926833,79.5662587,16z/data=!4m6!3m5!1s0x399d434a0774dc51:0x76e7534921a91ce!8m2!3d25.5926833!4d79.5662587!16s%2Fg%2F11l6tmshdf"
+target="_blank"
+class="map-btn">
+
+📍 Open Google Maps
+
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- CONTACT -->
+
+<div
+class="contact-side"
+id="contact">
+
+<div class="section-label">
+Get In Touch
+</div>
+
+<h2>
+Contact Krishna Jewellers
+</h2>
+
+<p>
+Like a jewellery design?
+Contact us directly on WhatsApp
+for enquiries and details.
+</p>
+
+
+<a
+href="https://wa.me/919984123388"
+target="_blank"
+class="contact-btn">
+
+🟢 Contact on WhatsApp
+
+</a>
+
+<div class="social-links">
+
+    <!-- INSTAGRAM -->
+
+    <div class="social-item">
+
+        <a
+        href="https://www.instagram.com/_krishna_jewellers_rath/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-btn"
+        aria-label="Instagram">
+
+            <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            stroke-linecap="round"
+            stroke-linejoin="round">
+
+                <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="5">
+                </rect>
+
+                <circle
+                cx="12"
+                cy="12"
+                r="4">
+                </circle>
+
+                <circle
+                cx="17.5"
+                cy="6.5"
+                r="1">
+                </circle>
+
+            </svg>
+
+        </a>
+
+        <span class="social-name">
+            Instagram
+        </span>
+
+    </div>
+
+
+    <!-- FACEBOOK -->
+
+    <div class="social-item">
+
+        <a
+        href="https://www.facebook.com/share/18rPmNgVsh/?mibextid=wwXIfr"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-btn"
+        aria-label="Facebook">
+
+            <svg
+            viewBox="0 0 24 24"
+            fill="currentColor">
+
+                <path
+                d="M14 8h3V4h-3c-3.3 0-5 2-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.7.3-1 1-1z">
+                </path>
+
+            </svg>
+
+        </a>
+
+        <span class="social-name">
+            Facebook
+        </span>
+
+    </div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="footer-brand">
+Krishna Jewellers
+</div>
+
+<div>
+Fine Gold Jewellery • Rath, Uttar Pradesh
+</div>
+
+<div style="margin-top:8px;">
+©️ since 1991 ||Krishna Jewellers||. All Rights Reserved.
+</div>
+
+</footer>
+
+
+
+<script>
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+function toggleMenu() {
+
+document
+.getElementById("mainNav")
+.classList.toggle("active");
+
+}
+
+
+/* =====================================================
+   GOLD RATES
+===================================================== */
+
+async function loadGoldRates() {
+
+try {
+
+const response =
+await fetch("/api/gold-rates");
+
+const data =
+await response.json();
+
+const rates =
+data.goldRates || {};
+
+
+document
+.getElementById("rate24Display")
+.textContent =
+"₹" +
+Number(
+rates["24K"] || 0
+).toLocaleString("en-IN");
+
+
+document
+.getElementById("rate22Display")
+.textContent =
+"₹" +
+Number(
+rates["22K"] || 0
+).toLocaleString("en-IN");
+
+
+document
+.getElementById("rate18Display")
+.textContent =
+"₹" +
+Number(
+rates["18K"] || 0
+).toLocaleString("en-IN");
+
+
+} catch(error) {
+
+console.log(
+"Gold rates could not be loaded.",
+error
+);
+
+}
+
+}
+
+
+
+
+/* =====================================================
+   JEWELLERY SEARCH
+===================================================== */
+
+function searchJewellery() {
+
+    const input =
+        document.getElementById(
+            "jewellerySearch"
+        );
+
+    const search =
+        input.value.trim();
+
+
+    if (!search) {
+
+        input.focus();
+
+        return;
+
+    }
+
+
+    window.location.href =
+        "category.html?search=" +
+        encodeURIComponent(search);
+
+}
+
+
+/* ENTER KEY SEARCH */
+
+document
+    .getElementById("jewellerySearch")
+    .addEventListener(
+        "keydown",
+        function(event) {
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                searchJewellery();
+
+            }
+
+        }
+    );
+
+
+
+/* =====================================================
+   CATEGORIES
+===================================================== */
+
+let allCategories = [];
+
+async function loadCategories() {
+
+    try {
+
+        const response =
+            await fetch("/api/categories");
+
+        const data =
+            await response.json();
+
+        allCategories =
+            Array.isArray(data.categories)
+                ? data.categories
+                : [];
+
+        const container =
+            document.getElementById(
+                "categoryContainer"
+            );
+
+        container.innerHTML = "";
+
+
+        /* FIRST 6 CATEGORIES */
+
+        allCategories
+            .slice(0, 6)
+            .forEach(category => {
+
+                const categoryName =
+                    typeof category === "string"
+                        ? category
+                        : category.name;
+
+                const categoryImage =
+                    typeof category === "object" &&
+                    category.image
+                        ? category.image
+                        : "images/category-ring.jpg";
+
+
+                if (!categoryName) {
+                    return;
+                }
+
+
+                const card =
+                    document.createElement("div");
+
+                card.className =
+                    "category-card";
+
+
+                card.innerHTML = `
+
+                    <img
+                        class="category-image"
+                        src="${escapeHTML(categoryImage)}"
+                        alt="${escapeHTML(categoryName)}"
+                        loading="lazy"
+                        onerror="this.src='images/category-ring.jpg'"
+                    >
+
+                    <div class="category-info">
+
+                        <h3>
+                            ${escapeHTML(categoryName)}
+                        </h3>
+
+                        <div class="category-link">
+                            Explore Collection →
+                        </div>
+
+                    </div>
+
+                `;
+
+
+                card.onclick =
+                    function() {
+
+                        window.location.href =
+                            "category.html?category=" +
+                            encodeURIComponent(
+                                categoryName
+                            );
+
+                    };
+
+
+                container.appendChild(card);
+
+            });
+
+
+        /* VIEW ALL */
+
+        const button =
+            document.getElementById(
+                "viewAllButton"
+            );
+
+
+        if (allCategories.length > 6) {
+
+            button.style.display =
+                "block";
+
+            button.onclick =
+                function() {
+
+                    window.location.href =
+                        "categories.html";
+
+                };
+
+        } else {
+
+            button.style.display =
+                "none";
+
+        }
+
+
+    } catch (error) {
+
+        console.error(
+            "Categories could not be loaded:",
+            error
+        );
+
+        document.getElementById(
+            "categoryContainer"
+        ).innerHTML = `
+
+            <p style="
+                text-align:center;
+                color:#999;
+                grid-column:1/-1;
+            ">
+                Categories could not be loaded.
+            </p>
+
+        `;
+
+    }
+
+}
+
+/* =====================================================
+   CATEGORY SEARCH
+===================================================== */
+
+
+
+
+
+/* =====================================================
+   SECURITY
+===================================================== */
+
+function escapeHTML(value) {
+
+return String(value)
+
+.replace(/&/g,"&amp;")
+
+.replace(/</g,"&lt;")
+
+.replace(/>/g,"&gt;")
+
+.replace(/"/g,"&quot;")
+
+.replace(/'/g,"&#039;");
+
+}
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadGoldRates();
+
+loadCategories();
+
+
+setInterval(
+loadGoldRates,
+60 * 1000
+);
+
+
+</script>
+
+</body>
+
+</html>

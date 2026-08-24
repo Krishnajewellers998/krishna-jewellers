@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+<title>Krishna Jewellers | Admin</title>
+
+<style>
+
+:root {
+    --gold: #d4af37;
+    --gold2: #a77b09;
+    --dark: #090909;
+    --cream: #fbf8f0;
+    --red: #b42318;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #f8f3e6, #fff);
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* ================= HEADER ================= */
+
+.top {
+    background: #090909;
+    color: white;
+    padding: 22px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(212,175,55,.3);
+}
+
+.top h1 {
+    margin: 0;
+    color: var(--gold);
+    font: 700 30px Georgia, serif;
+}
+
+.top p {
+    margin: 5px 0 0;
+    color: #bbb;
+}
+
+.top a {
+    color: white;
+    text-decoration: none;
+    border: 1px solid #555;
+    padding: 9px 14px;
+    border-radius: 8px;
+}
+
+/* ================= MAIN ================= */
+
+.wrap {
+    max-width: 1050px;
+    margin: 28px auto;
+    padding: 0 18px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #ead9a3;
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 22px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.06);
+}
+
+h2 {
+    margin: 0 0 8px;
+    color: var(--gold2);
+    font: 700 25px Georgia, serif;
+}
+
+.sub {
+    color: #777;
+    margin: 0 0 18px;
+}
+
+/* ================= GOLD ================= */
+
+.rate-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.rate {
+    padding: 16px;
+    background: #fffaf0;
+    border: 1px solid #ead9a3;
+    border-radius: 12px;
+}
+
+.rate strong {
+    display: block;
+    color: var(--gold2);
+    margin-bottom: 8px;
+}
+
+.rate input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+/* ================= BUTTON ================= */
+
+.btn {
+    border: 0;
+    background: linear-gradient(
+        135deg,
+        var(--gold),
+        var(--gold2)
+    );
+
+    color: white;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    margin-top: 14px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+/* ================= STATUS ================= */
+
+.status {
+    display: none;
+    margin-top: 14px;
+    padding: 11px;
+    border-radius: 8px;
+}
+
+.success {
+    display: block;
+    background: #e9f7ec;
+    color: #28733a;
+}
+
+.error {
+    display: block;
+    background: #ffeded;
+    color: #a32920;
+}
+
+/* ================= PREVIEW ================= */
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.preview {
+    background: var(--cream);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ead9a3;
+}
+
+.preview img {
+    width: 100%;
+    height: 135px;
+    object-fit: cover;
+    display: block;
+}
+
+.preview-body {
+    padding: 10px;
+}
+
+.preview-body strong {
+    display: block;
+}
+
+.muted {
+    font-size: 13px;
+    color: #777;
+    margin-top: 4px;
+}
+
+.empty {
+    padding: 24px;
+    text-align: center;
+    color: #888;
+    background: #fafafa;
+    border-radius: 12px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px) {
+
+    .top {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .top h1 {
+        font-size: 25px;
+    }
+
+    .wrap {
+        margin: 18px auto;
+        padding: 0 12px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .rate-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="top">
+
+    <div>
+
+        <h1>
+            Krishna Jewellers
+        </h1>
+
+        <p>
+            Premium Admin Panel
+        </p>
+
+    </div>
+
+
+    <a href="/">
+        ← Open Website
+    </a>
+
+</header>
+
+
+
+<main class="wrap">
+
+
+<!-- ================= GOLD RATE ================= -->
+
+<section class="card">
+
+    <h2>
+        Gold Rate Management
+    </h2>
+
+    <p class="sub">
+        Rates are per 10 gram.
+    </p>
+
+
+    <form id="goldRateForm">
+
+        <div class="rate-grid">
+
+            <div class="rate">
+
+                <strong>
+                    24K Gold
+                </strong>
+
+                <input
+                    type="number"
+                    id="rate24"
+                    min="0"
+                    required>
+
+            </div>
+
+
+            <div class="rate">
+
+                <strong>
+                    22K Gold
+                </strong>
+
+                <input
+                    type="number"
+                    id="rate22"
+                    min="0"
+                    required>
+
+            </div>
+
+
+            <div class="rate">
+
+                <strong>
+                    18K Gold
+                </strong>
+
+                <input
+                    type="number"
+                    id="rate18"
+                    min="0"
+                    required>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="btn"
+            type="submit">
+
+            Save Gold Rates
+
+        </button>
+
+    </form>
+
+
+    <div
+        id="goldStatus"
+        class="status">
+    </div>
+
+</section>
+
+
+
+<!-- ================= CATEGORY MANAGEMENT ================= -->
+
+<section class="card">
+
+    <h2>
+        Category Management
+    </h2>
+
+    <p class="sub">
+        Quick preview of your categories.
+    </p>
+
+
+    <div
+        id="categoryPreview"
+        class="preview-grid">
+
+    </div>
+
+
+    <a
+        class="btn"
+        href="categories.html">
+
+        Manage All Categories →
+
+    </a>
+
+</section>
+
+
+
+<!-- ================= JEWELLERY MANAGEMENT ================= -->
+
+<section class="card">
+
+    <h2>
+        Jewellery Management
+    </h2>
+
+    <p class="sub">
+        Quick preview of your latest jewellery designs.
+    </p>
+
+
+    <div
+        id="jewelleryPreview"
+        class="preview-grid">
+
+    </div>
+
+
+    <a
+        class="btn"
+        href="jewellery.html">
+
+        Manage All Jewellery →
+
+    </a>
+
+</section>
+
+
+</main>
+
+
+
+<script>
+
+/* =====================================================
+   HELPER
+===================================================== */
+
+const $ =
+    id => document.getElementById(id);
+
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function status(
+    id,
+    message,
+    type
+) {
+
+    $(id).textContent =
+        message;
+
+    $(id).className =
+        "status " + type;
+
+}
+
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function esc(value) {
+
+    return String(
+        value ?? ""
+    ).replace(
+        /[&<>"']/g,
+        function(match) {
+
+            return {
+
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#039;"
+
+            }[match];
+
+        }
+    );
+
+}
+
+
+
+/* =====================================================
+   LOAD GOLD
+===================================================== */
+
+async function loadGold() {
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/gold-rates"
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (
+            data.success &&
+            data.goldRates
+        ) {
+
+            $("rate24").value =
+                data.goldRates["24K"] || "";
+
+            $("rate22").value =
+                data.goldRates["22K"] || "";
+
+            $("rate18").value =
+                data.goldRates["18K"] || "";
+
+        }
+
+    } catch (error) {
+
+        console.log(
+            "Gold load error:",
+            error
+        );
+
+    }
+
+}
+
+
+
+/* =====================================================
+   SAVE GOLD
+===================================================== */
+
+$("goldRateForm").onsubmit =
+async function(event) {
+
+    event.preventDefault();
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/gold-rates",
+                {
+
+                    method: "POST",
+
+                    headers: {
+
+                        "Content-Type":
+                            "application/json"
+
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            rate24:
+                                $("rate24").value,
+
+                            rate22:
+                                $("rate22").value,
+
+                            rate18:
+                                $("rate18").value
+
+                        })
+
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        status(
+            "goldStatus",
+            data.message ||
+            "Gold rates saved.",
+            data.success
+                ? "success"
+                : "error"
+        );
+
+
+    } catch (error) {
+
+        status(
+            "goldStatus",
+            "Could not save gold rates.",
+            "error"
+        );
+
+    }
+
+};
+
+
+
+/* =====================================================
+   LOAD CATEGORIES
+===================================================== */
+
+async function loadCategories() {
+
+    const box =
+        $("categoryPreview");
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/categories"
+            );
+
+
+        const data =
+            await response.json();
+
+
+        const categories =
+            Array.isArray(
+                data.categories
+            )
+                ? data.categories
+                : [];
+
+
+        /*
+           Main page par sirf 7 categories.
+        */
+
+        const preview =
+            categories.slice(
+                0,
+                7
+            );
+
+
+        if (
+            preview.length === 0
+        ) {
+
+            box.innerHTML = `
+
+                <div
+                    class="empty"
+                    style="grid-column:1/-1">
+
+                    No categories added yet.
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        box.innerHTML =
+            preview.map(
+                category => {
+
+                    const name =
+                        typeof category === "string"
+                            ? category
+                            : category?.name;
+
+
+                    const image =
+                        typeof category === "object" &&
+                        category?.image
+                            ? "/" + category.image
+                            : "";
+
+
+                    return `
+
+                        <div class="preview">
+
+                            ${
+                                image
+
+                                ?
+
+                                `
+                                <img
+                                    src="${esc(image)}"
+                                    alt="${esc(name)}">
+                                `
+
+                                :
+
+                                `
+                                <div
+                                    style="
+                                        height:135px;
+                                        display:grid;
+                                        place-items:center;
+                                        color:#999;
+                                    ">
+
+                                    No Photo
+
+                                </div>
+                                `
+
+                            }
+
+
+                            <div class="preview-body">
+
+                                <strong>
+                                    ${esc(name)}
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                }
+            ).join("");
+
+
+    } catch (error) {
+
+        box.innerHTML = `
+
+            <div
+                class="empty"
+                style="grid-column:1/-1">
+
+                Could not load categories.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   LOAD JEWELLERY
+===================================================== */
+
+async function loadJewellery() {
+
+    const box =
+        $("jewelleryPreview");
+
+
+    try {
+
+        const response =
+            await fetch(
+                "/api/jewellery"
+            );
+
+
+        const data =
+            await response.json();
+
+
+        const jewellery =
+            Array.isArray(
+                data.jewellery
+            )
+                ? data.jewellery
+                : [];
+
+
+        /*
+           Main page par sirf 7 designs.
+        */
+
+        const preview =
+            jewellery
+                .slice()
+                .reverse()
+                .slice(
+                    0,
+                    7
+                );
+
+
+        if (
+            preview.length === 0
+        ) {
+
+            box.innerHTML = `
+
+                <div
+                    class="empty"
+                    style="grid-column:1/-1">
+
+                    No jewellery designs added yet.
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        box.innerHTML =
+            preview.map(
+                item => {
+
+
+                    let images = [];
+
+
+                    if (
+                        Array.isArray(
+                            item.images
+                        )
+                    ) {
+
+                        images =
+                            item.images;
+
+                    } else if (
+                        item.image
+                    ) {
+
+                        images = [
+                            item.image
+                        ];
+
+                    }
+
+
+                    const image =
+                        images[0]
+                            ? "/" + images[0]
+                            : "";
+
+
+                    return `
+
+                        <div class="preview">
+
+                            ${
+                                image
+
+                                ?
+
+                                `
+                                <img
+                                    src="${esc(image)}"
+                                    alt="${esc(item.name)}">
+                                `
+
+                                :
+
+                                `
+                                <div
+                                    style="
+                                        height:135px;
+                                        display:grid;
+                                        place-items:center;
+                                        color:#999;
+                                    ">
+
+                                    No Photo
+
+                                </div>
+                                `
+
+                            }
+
+
+                            <div class="preview-body">
+
+                                <strong>
+                                    ${esc(item.name)}
+                                </strong>
+
+
+                                <div class="muted">
+
+                                    ${esc(
+                                        item.category ||
+                                        ""
+                                    )}
+
+                                    ${
+                                        item.weight
+                                            ? " • " +
+                                              esc(
+                                                  item.weight
+                                              ) +
+                                              " g"
+                                            : ""
+                                    }
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    `;
+
+                }
+            ).join("");
+
+
+    } catch (error) {
+
+        box.innerHTML = `
+
+            <div
+                class="empty"
+                style="grid-column:1/-1">
+
+                Could not load jewellery.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadGold();
+
+loadCategories();
+
+loadJewellery();
+
+
+console.log(
+    "Krishna Jewellers Admin Panel Ready"
+);
+
+</script>
+
+
+</body>
+
+</html>
