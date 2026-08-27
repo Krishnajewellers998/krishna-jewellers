@@ -1707,16 +1707,12 @@ app.put(
 
 /* =====================================================
    DELETE CATEGORY
-===================================================== */
-
-/* =====================================================
-   DELETE CATEGORY
-   CATEGORY + ITS JEWELLERY + CATEGORY IMAGE
+   CATEGORY + ITS JEWELLERY + ALL IMAGES
 ===================================================== */
 
 app.delete(
     "/api/categories/:name",
-    (req, res) => {
+    async (req, res) => {
 
         try {
 
@@ -1791,7 +1787,7 @@ app.delete(
 
 
             /* =================================================
-               DELETE JEWELLERY OF THIS CATEGORY
+               FIND JEWELLERY OF CATEGORY
             ================================================= */
 
             const jewelleryToDelete =
@@ -1800,7 +1796,7 @@ app.delete(
 
                         return (
                             String(
-                                item.category || ""
+                                item?.category || ""
                             )
                             .trim()
                             .toLowerCase() ===
@@ -1811,13 +1807,17 @@ app.delete(
                 );
 
 
+            /* =================================================
+               REMOVE JEWELLERY FROM DATABASE DATA
+            ================================================= */
+
             data.jewellery =
                 data.jewellery.filter(
                     item => {
 
                         return (
                             String(
-                                item.category || ""
+                                item?.category || ""
                             )
                             .trim()
                             .toLowerCase() !==
@@ -1829,7 +1829,7 @@ app.delete(
 
 
             /* =================================================
-               DELETE CATEGORY
+               REMOVE CATEGORY
             ================================================= */
 
             data.categories.splice(
@@ -1839,10 +1839,11 @@ app.delete(
 
 
             /* =================================================
-               SAVE DATA
+               IMPORTANT
+               SAVE AND WAIT FOR POSTGRESQL
             ================================================= */
 
-            saveData(data);
+            await saveData(data);
 
 
             /* =================================================
@@ -1870,6 +1871,11 @@ app.delete(
                             imagePath
                         );
 
+                        console.log(
+                            "Category image deleted:",
+                            categoryImage
+                        );
+
                     }
 
                 } catch (imageError) {
@@ -1893,7 +1899,7 @@ app.delete(
 
                     if (
                         !Array.isArray(
-                            item.images
+                            item?.images
                         )
                     ) {
 
@@ -1932,6 +1938,11 @@ app.delete(
 
                                     fs.unlinkSync(
                                         imagePath
+                                    );
+
+                                    console.log(
+                                        "Jewellery image deleted:",
+                                        image
                                     );
 
                                 }
