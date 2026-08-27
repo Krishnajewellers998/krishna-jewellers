@@ -2,6 +2,7 @@ const express = require("express");
 const fs = require("fs");
 const multer = require("multer");
 const path = require("path");
+const { Pool } = require("pg");
 
 const app = express();
 
@@ -117,6 +118,302 @@ function requireConfiguredAdmin(req, res, next) {
 
 
 const DATA_FILE = path.join(__dirname, "data.json");
+/* =====================================================
+   POSTGRESQL DATABASE
+===================================================== */
+
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL,
+    ssl: process.env.DATABASE_URL
+        ? { rejectUnauthorized: false }
+        : false
+});
+
+let runtimeData = null;
+
+let databaseSaveQueue = Promise.resolve();
+
+
+const emptyData = {
+
+    goldRates: {
+        "24K": 0,
+        "22K": 0,
+        "18K": 0
+    },
+
+    updatedAt: null,
+
+    categories: [],
+
+    jewellery: []
+
+};
+
+
+/* =====================================================
+   INITIALIZE DATABASE
+===================================================== */
+
+async function initializeDatabase() {
+
+    if (!process.env.DATABASE_URL) {
+
+        throw new Error(
+            "DATABASE_URL is not configured."
+        );
+
+    }
+
+
+    await pool.query(`
+        CREATE TABLE IF NOT EXISTS krishna_jewellers_data (
+            id INTEGER PRIMARY KEY,
+            data JSONB NOT NULL
+        )
+    `);
+
+
+    const result = await pool.query(
+        `
+        SELECT data
+        FROM krishna_jewellers_data
+        WHERE id = 1
+        `
+    );
+
+
+    if (result.rows.length > 0) {
+
+        runtimeData = {
+
+            ...emptyData,
+
+            ...result.rows[0].data,
+
+            goldRates: {
+
+                ...emptyData.goldRates,
+
+                ...(result.rows[0].data.goldRates || {})
+
+            },
+
+            categories:
+                Array.isArray(
+                    result.rows[0].data.categories
+                )
+                    ? result.rows[0].data.categories
+                    : [],
+
+            jewellery:
+                Array.isArray(
+                    result.rows[0].data.jewellery
+                )
+                    ? result.rows[0].data.jewellery
+                    : []
+
+        };
+
+
+        console.log(
+            "PostgreSQL data loaded successfully."
+        );
+
+        console.log(
+            `Categories: ${runtimeData.categories.length}`
+        );
+
+        console.log(
+            `Jewellery: ${runtimeData.jewellery.length}`
+        );
+
+
+        return;
+
+    }
+
+
+    /*
+       First time PostgreSQL is being used.
+
+       Existing data.json will be imported once.
+    */
+
+    let oldData = emptyData;
+
+
+    try {
+
+        if (fs.existsSync(DATA_FILE)) {
+
+            oldData =
+                JSON.parse(
+                    fs.readFileSync(
+                        DATA_FILE,
+                        "utf8"
+                    )
+                );
+
+        }
+
+    } catch (error) {
+
+        console.log(
+            "Could not import existing data.json:",
+            error.message
+        );
+
+    }
+
+
+    runtimeData = {
+
+        ...emptyData,
+
+        ...oldData,
+
+        goldRates: {
+
+            ...emptyData.goldRates,
+
+            ...(oldData.goldRates || {})
+
+        },
+
+        categories:
+            Array.isArray(
+                oldData.categories
+            )
+                ? oldData.categories
+                : [],
+
+        jewellery:
+            Array.isArray(
+                oldData.jewellery
+            )
+                ? oldData.jewellery
+                : []
+
+    };
+
+
+    await pool.query(
+        `
+        INSERT INTO krishna_jewellers_data
+        (id, data)
+        VALUES ($1, $2::jsonb)
+        ON CONFLICT (id)
+        DO UPDATE SET data = EXCLUDED.data
+        `,
+        [
+            1,
+            JSON.stringify(runtimeData)
+        ]
+    );
+
+
+    console.log(
+        "Existing data.json imported into PostgreSQL."
+    );
+
+    console.log(
+        `Categories: ${runtimeData.categories.length}`
+    );
+
+    console.log(
+        `Jewellery: ${runtimeData.jewellery.length}`
+    );
+
+}
+
+
+/* =====================================================
+   READ DATA FROM POSTGRESQL CACHE
+===================================================== */
+
+function readData() {
+
+    if (!runtimeData) {
+
+        return {
+
+            ...emptyData,
+
+            goldRates: {
+                ...emptyData.goldRates
+            },
+
+            categories: [],
+
+            jewellery: []
+
+        };
+
+    }
+
+
+    return runtimeData;
+
+}
+
+
+/* =====================================================
+   SAVE DATA TO POSTGRESQL
+===================================================== */
+
+function saveData(data) {
+
+    runtimeData = data;
+
+
+    /*
+       Take a snapshot immediately so later
+       changes cannot corrupt this save.
+    */
+
+    const snapshot =
+        JSON.parse(
+            JSON.stringify(data)
+        );
+
+
+    databaseSaveQueue =
+        databaseSaveQueue
+            .then(async () => {
+
+                await pool.query(
+                    `
+                    INSERT INTO krishna_jewellers_data
+                    (id, data)
+                    VALUES ($1, $2::jsonb)
+                    ON CONFLICT (id)
+                    DO UPDATE SET data = EXCLUDED.data
+                    `,
+                    [
+                        1,
+                        JSON.stringify(snapshot)
+                    ]
+                );
+
+                console.log(
+                    "Data saved to PostgreSQL."
+                );
+
+            })
+            .catch(error => {
+
+                console.error(
+                    "PostgreSQL save error:",
+                    error.message
+                );
+
+            });
+
+
+    return databaseSaveQueue;
+
+}
 
 const imagesFolder =
     path.join(__dirname, "images");
@@ -296,129 +593,6 @@ const upload =
     });
 
 
-/* =====================================================
-   READ DATA
-===================================================== */
-
-function readData() {
-
-    const emptyData = {
-
-        goldRates: {
-
-            "24K": 0,
-
-            "22K": 0,
-
-            "18K": 0
-
-        },
-
-        updatedAt: null,
-
-        categories: [],
-
-        jewellery: []
-
-    };
-
-
-    try {
-
-        if (
-            !fs.existsSync(
-                DATA_FILE
-            )
-        ) {
-
-            return emptyData;
-
-        }
-
-
-        const data =
-            JSON.parse(
-                fs.readFileSync(
-                    DATA_FILE,
-                    "utf8"
-                )
-            );
-
-
-        return {
-
-            ...emptyData,
-
-            ...data,
-
-            goldRates: {
-
-                ...emptyData.goldRates,
-
-                ...(data.goldRates || {})
-
-            },
-
-            categories:
-
-                Array.isArray(
-                    data.categories
-                )
-                    ? data.categories
-                    : [],
-
-            jewellery:
-
-                Array.isArray(
-                    data.jewellery
-                )
-                    ? data.jewellery
-                    : []
-
-        };
-
-    } catch (error) {
-
-        console.log(
-            "Could not read data.json:",
-            error.message
-        );
-
-        return emptyData;
-
-    }
-
-}
-
-
-/* =====================================================
-   SAVE DATA
-===================================================== */
-
-function saveData(data) {
-
-    const tempFile = DATA_FILE + ".tmp";
-
-    fs.writeFileSync(
-
-        tempFile,
-
-        JSON.stringify(
-            data,
-            null,
-            4
-        ),
-
-        "utf8"
-
-    );
-
-    fs.renameSync(
-        tempFile,
-        DATA_FILE
-    );
-
-}
 
 
 /* =====================================================
@@ -2968,17 +3142,36 @@ app.use(
    START SERVER
 ===================================================== */
 
-app.listen(
-    PORT,
-    () => {
+initializeDatabase()
+    .then(() => {
 
-        console.log(
-            `Krishna Jewellers website running at http://localhost:${PORT}`
+        app.listen(
+            PORT,
+            () => {
+
+                console.log(
+                    `Krishna Jewellers website running at http://localhost:${PORT}`
+                );
+
+                console.log(
+                    `Admin panel: http://localhost:${PORT}/admin/index.html`
+                );
+
+                console.log(
+                    "Krishna Jewellers PostgreSQL database is connected."
+                );
+
+            }
         );
 
-        console.log(
-            `Admin panel: http://localhost:${PORT}/admin/index.html`
+    })
+    .catch(error => {
+
+        console.error(
+            "DATABASE STARTUP ERROR:",
+            error
         );
 
-    }
-);
+        process.exit(1);
+
+    });
