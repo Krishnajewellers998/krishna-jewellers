@@ -2719,7 +2719,7 @@ async function loadGoldRates() {
 try {
 
 const response =
-await fetch("https://krishna-jewellers-y7h4.onrender.com/api/gold-rates");
+await fetch("/api/gold-rates");
 
 const data =
 await response.json();
